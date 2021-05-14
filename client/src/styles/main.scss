@@ -1,0 +1,59 @@
+#root{
+  height: 800px
+}
+.lockscreen-container {
+  display: flex;
+  height: 100%;
+  .sidebar {
+    background-color: darkgrey;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .featured {
+      background-color: yellow;
+      height: 25%;
+      width: 80%;
+      margin: 5%;
+    }
+    .sidebar-featured-button-container {
+      border: 2px solid red;
+      display: flex;
+      width: 80%;
+      button {
+        background-color: white;
+        color: black;
+        flex: 1
+      }
+      p {
+        color: white;
+        flex: 7;
+      }
+    }
+  }
+  .main {
+    width: auto;
+    .infobar-container {
+
+    }
+    .centre-content {
+
+    }
+    .continue-button-container {
+      border: 2px solid red;
+      bottom: 7%;
+      left: 40%;
+      display: flex;
+      button {
+        background-color: black;
+        color: white;
+        flex: 1
+      }
+      p {
+        color: black;
+        flex: 7;
+      }
+    }
+  }
+}
