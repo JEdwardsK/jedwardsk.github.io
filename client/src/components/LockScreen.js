@@ -1,10 +1,21 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router'
 
 const LockScreen = () => {
   const [continueCounter, setContinueCounter] = useState(0)
   const [featuredCounter, setFeaturedCounter] = useState(0)
   const [pressedButton, setPressedButton] = useState(null)
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyPress)
+    if (continueCounter === 4) {
+      document.removeEventListener('keydown', handleKeyPress)
+      history.push('/home/')
+    }
+  })
+
+  const history = useHistory()
 
   const handleContinueClick = ({ keyCode }) => {
     let newCount = continueCounter
@@ -27,19 +38,19 @@ const LockScreen = () => {
       newYCount++
       setContinueCounter(0)
       setFeaturedCounter(newYCount)
+    } else {
+      setContinueCounter(0)
+      setFeaturedCounter(0)
     }
   }
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyPress)
-  })
+
 
   return (
     <div className="lockscreen-container">
-      <h1>clicked a {continueCounter} times</h1>
-      <h1>clicked y {featuredCounter} times</h1>
       { continueCounter < 1 &&
         <section className="sidebar">
-          <div className="featured"></div>
+          <div className="featured"><h1>clicked a {continueCounter} times</h1></div>
+          <h1>clicked y {featuredCounter} times</h1>
           <div className="featured"></div>
           <div className="featured"></div>
           <div className="sidebar-featured-button-container">
@@ -52,6 +63,8 @@ const LockScreen = () => {
       { featuredCounter < 1 &&
         <div className="main">
           <div className="infobar-container"></div>
+          <h1>clicked a {continueCounter} times</h1>
+          <h1>clicked y {featuredCounter} times</h1>
           <div className="centre-content"></div>
           <div className="continue-button-container">
             <button className="continue" onClick={handleContinueClick} onKeyDown={handleContinueClick}>A</button>
