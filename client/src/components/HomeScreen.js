@@ -82,6 +82,7 @@ export const HomeScreen = () => {
           <button name="settings" onClick={handlePageChange}className="homescreen-buttons">Settings</button>
           <button className="homescreen-buttons">Return Home</button>
         </div>
+        <hr />
         <Footer/>
         {/* <div className="homescreen-footer">
           <div className="placeholder-switch"></div>

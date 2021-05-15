@@ -23,17 +23,18 @@ const LockScreen = () => {
   const featuredSound = new Audio(newsSound)
 
 
-  useEffect(() => {
-    document.addEventListener('keyup', handleKeyPress)
-    if (continueCounter === 4) {
-      document.removeEventListener('keyup', handleKeyPress)
-      history.push('/home')
-    } else if (featuredCounter === 4) {
-      featuredSound.play()
-      document.removeEventListener('keydown', handleKeyPress)
-      history.push('/featured')
-    }
-  })
+  // useEffect(() => {
+  //   document.addEventListener('keyup', handleKeyPress)
+  //   if (continueCounter === 4) {
+  //     document.removeEventListener('keyup', handleKeyPress)
+  //     history.push('/home')
+  //   } else if (featuredCounter === 4) {
+  //     featuredSound.play()
+  //     document.removeEventListener('keydown', handleKeyPress)
+  //     history.push('/featured')
+  //     return
+  //   }
+  // })
 
   const history = useHistory()
 

@@ -4,7 +4,6 @@ import { useHistory, useLocation } from 'react-router-dom'
 const Footer = () => {
   const location = useLocation()
   const history = useHistory()
-  console.log('iam the location', location)
 
   const handlegoBack = () => {
     history.goBack()
@@ -12,7 +11,7 @@ const Footer = () => {
   return (
     <div className="footer-container">
       { location.pathname !== '/home' &&
-        <button>Back</button>
+        <button onClick={handlegoBack}>Back</button>
       }
     </div>
   )

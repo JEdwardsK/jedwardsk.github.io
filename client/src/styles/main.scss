@@ -17,6 +17,7 @@ $brand-grey: #414548;
 #root{
   height: 800px
 }
+//? LOCKSCREEN STYLING
 .lockscreen-container {
   display: flex;
   height: 100%;
@@ -93,6 +94,8 @@ $brand-grey: #414548;
   }
 }
 
+
+//? HOMESCREEN STYLING
 .homescreen-container {
   .profile, .homescreen-buttons {
     border-radius: 50%;
@@ -114,6 +117,7 @@ $brand-grey: #414548;
     background-color: thistle;
     height: 70%;
     .carousel {
+      display: flex;
       background-color: paleturquoise;
       height: 100%;
       align-items: center;
@@ -147,27 +151,14 @@ $brand-grey: #414548;
       color: black;
       height: 10%;
       display: flex;
-      justify-content: space-around;
-    }
-  .homescreen-footer {
-    display: flex;
-    height: 10%;
-    background-color: blue;
-    .placeholder-switch {
-
-    }
-    .ok-button-container {
+      justify-content: center;
       button {
-
-      }
-      p {
-
+        margin-left: 20px
       }
     }
-  }
-
 }
 
+//? DATE COMPONENT STYLING
 .date-container {
   background-color: violet;
   position: absolute;
@@ -183,7 +174,21 @@ $brand-grey: #414548;
 }
 }
 
+//? PROFILE PAGE STYLING
+
+.profile-header {
+  display: flex;
+  img {
+    border-radius: 50%;
+    width: 100px;
+  }
+}
 .profile-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-page-body {
   height:400px;
   background-color: burlywood;
   position: relative;
@@ -199,11 +204,45 @@ $brand-grey: #414548;
   .profile-main {
     overflow: auto;
     width: 75%;
-    left:25%
+    left:25%;
+    .profile-profile-tab {
+      background-color: blueviolet;
+      .my-info {
+        background-color: blue;
+        display:flex;
+
+        .profile.pic {
+          width:33%;
+
+        }
+        .my-info-right {
+          flex:2;
+          background-color: red;
+          display: flex;
+          flex-direction: column;
+          .current-play {
+            display: flex;
+            .current-play-img {
+              flex: 1;
+              width: 100px;
+            }
+            .current-play-text {
+              flex:4;
+            }
+          }
+        }
+      }
+    }
   }
 
 }
 
+.play-activity-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+//? SKILLS STYLING
 .team-member {
   display: flex;
   justify-content: space-between;
@@ -221,6 +260,30 @@ $brand-grey: #414548;
 
 }
 
+.skills {
+  .skills-container{
+    display: flex;
+  .skill{
+    flex: 0 0 20%;
+    display: flex;
+    width: 6rem;
+    color: orange;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    .skill-description {
+      display: flex;
+    }
+    .skill-name{
+      flex: 1;
+      text-align: center;
+      justify-self: center;
+    }
+  }
+}
+
+}
 .skills-container{
   display: flex;
   flex-direction: row;
@@ -255,3 +318,19 @@ $brand-grey: #414548;
   }
 }
 
+.footer-container {
+    display: flex;
+    height: 10%;
+    background-color: blue;
+    .placeholder-switch {
+
+    }
+    .ok-button-container {
+      button {
+
+      }
+      p {
+
+      }
+    }
+  }
