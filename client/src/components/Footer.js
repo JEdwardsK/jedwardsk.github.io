@@ -9,7 +9,7 @@ const Footer = () => {
     history.goBack()
   }
   return (
-    <div className="footer-container">
+    <div className="footer-container footer">
       { location.pathname !== '/home' &&
         <button onClick={handlegoBack}>Back</button>
       }

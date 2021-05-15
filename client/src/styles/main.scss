@@ -17,11 +17,11 @@ $brand-grey: #414548;
   animation: hover-focus 1s linear infinite;
 }
 
-.header {
+.header, .footer {
   height: 10%
 }
 .body {
-  height: 70%
+  height: 80%
 }
 #root{
   height: 800px

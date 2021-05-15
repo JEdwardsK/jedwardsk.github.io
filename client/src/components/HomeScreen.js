@@ -63,7 +63,7 @@ export const HomeScreen = () => {
   return (
     <>
       <div className="homescreen-container">
-        <div className="homescreen-header">
+        <div className="homescreen-header header">
           <button className="profile" name="profile" onClick={handlePageChange}></button>
           <SystemStatus/>
         </div>
@@ -72,26 +72,15 @@ export const HomeScreen = () => {
             {projects.map((project, index) => {
               const { image, title, tagLine } = project
               return (
-                <>
-                  <div className="carousel-item-container" key={index}>
-                    { textIndex === index &&
-                      <div className="scrolling-text"><span>{`${title} - ${tagLine}`}</span></div>
-                    }
+                <div className="carousel-item-container" key={index}>
+                  { textIndex === index &&
+                    <div className="scrolling-text"><span>{`${title} - ${tagLine}`}</span></div>
+                  }
 
-                    <button onClick={handleProjectModal} className="carousel-items highlight" name={title} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} value={index}>
-                      {/* <img className="carousel-items" src={image} alt={`preview of project: ${title}`} name='test' ></img> */}
-                    </button>
-                  </div>
-                  <div className="carousel-item-container" key={index}>
-                    { textIndex === index &&
-                      <div className="scrolling-text"><span>{`${title} - ${tagLine}`}</span></div>
-                    }
-
-                    <button onClick={handleProjectModal} className="carousel-items highlight" name={title} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} value={index}>
-                      {/* <img className="carousel-items" src={image} alt={`preview of project: ${title}`} name='test' ></img> */}
-                    </button>
-                  </div>
-                </>
+                  <button onClick={handleProjectModal} className="carousel-items highlight" name={title} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} value={index}>
+                    {/* <img className="carousel-items" src={image} alt={`preview of project: ${title}`} name='test' ></img> */}
+                  </button>
+                </div>
               )
             })
             }
