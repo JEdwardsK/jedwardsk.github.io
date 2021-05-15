@@ -1,27 +1,40 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
+import SystemStatus from './SystemStatus'
 
 const LockScreen = () => {
   const [continueCounter, setContinueCounter] = useState(0)
   const [featuredCounter, setFeaturedCounter] = useState(0)
-  const [pressedButton, setPressedButton] = useState(null)
+  const [sidebarWidth, setSidebarWidth] = useState('25%')
+  const [mainWidth, setMainWidth] = useState('75%')
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyPress)
     if (continueCounter === 4) {
       document.removeEventListener('keydown', handleKeyPress)
-      history.push('/home/')
+      history.push('/home')
+    } else if (featuredCounter === 4) {
+      document.removeEventListener('keydown', handleKeyPress)
+      history.push('/featured')
     }
   })
 
   const history = useHistory()
 
-  const handleContinueClick = ({ keyCode }) => {
-    let newCount = continueCounter
-    // keyCode === 65 && newCount++
-    newCount++
-    setContinueCounter(newCount)
+  const handleClick = (event) => {
+    const { name } = event.target
+    let newACount = continueCounter
+    let newYCount = featuredCounter
+    if (name === 'a') {
+      newACount++
+      setContinueCounter(newACount)
+      setFeaturedCounter(0)
+    } else if (name === 'y') {
+      newYCount++
+      setFeaturedCounter(newYCount)
+      setContinueCounter(0)
+    }
     console.log('testing counter', continueCounter)
   }
   const handleKeyPress = ({ key, keyCode }) => {
@@ -30,44 +43,61 @@ const LockScreen = () => {
       let newACount = continueCounter
       newACount++
       if (featuredCounter !== 0) {
+        setSidebarWidth('25%')
+        setMainWidth('75%')
         setFeaturedCounter(0)
         setContinueCounter(0)
       } else setContinueCounter(newACount)
     } else if (keyCode === 89) {
       let newYCount = featuredCounter
       newYCount++
+      setSidebarWidth('100%')
+      setMainWidth('0')
       setContinueCounter(0)
       setFeaturedCounter(newYCount)
     } else {
       setContinueCounter(0)
       setFeaturedCounter(0)
+      setSidebarWidth('25%')
     }
   }
 
 
   return (
     <div className="lockscreen-container">
+      <>{`${continueCounter} | ${featuredCounter}`}</>
+      <SystemStatus/>
       { continueCounter < 1 &&
-        <section className="sidebar">
-          <div className="featured"><h1>clicked a {continueCounter} times</h1></div>
-          <h1>clicked y {featuredCounter} times</h1>
-          <div className="featured"></div>
-          <div className="featured"></div>
-          <div className="sidebar-featured-button-container">
-            <button className="featured-news-button">Y</button>
-            <p>Featured News</p>
+        <section className="sidebar" style={{ width: sidebarWidth }}>
+          {sidebarWidth === '100%' ?
+            <div className="alt-featured-container">
+              <div className="featured"></div>
+              <div className="featured"></div>
+              <div className="featured"></div>
+            </div>
+            :
+            <div className="featured-container">
+              <div className="featured"></div>
+              <div className="featured"></div>
+              <div className="featured"></div>
+            </div>
 
+          }
+          <div className="sidebar-featured-button-container">
+            <button name="y" onClick={handleClick} className="featured-news-button">Y</button>
+            <p>Featured News</p>
           </div>
         </section>
       }
       { featuredCounter < 1 &&
-        <div className="main">
+        <div className="main" style={{ width: mainWidth }}>
           <div className="infobar-container"></div>
-          <h1>clicked a {continueCounter} times</h1>
-          <h1>clicked y {featuredCounter} times</h1>
           <div className="centre-content"></div>
+          { mainWidth === '100%' &&
+            <p>Press the same button three times.</p>
+          }
           <div className="continue-button-container">
-            <button className="continue" onClick={handleContinueClick} onKeyDown={handleContinueClick}>A</button>
+            <button className="continue" onClick={handleClick} name="a">A</button>
             <p>Continue</p>
           </div>
         </div>}
