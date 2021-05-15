@@ -31,3 +31,15 @@ trying something out
           <div className="user-settings-tab"></div>
           </div>
       </div> */}
+
+
+      <div className="profile-sidebar">
+            <button value="0" onClick={handleTabToggle} className="profile-tab">Profile</button>
+            <hr />
+            <button value="1" onClick={handleTabToggle} className="friends-list">Friend List</button>
+            <button value="2" onClick={handleTabToggle} className="trending-with-friends">Trending With Friends</button>
+            <button value="3" onClick={handleTabToggle} className="online-play-invites">Online Play Invitations</button>
+            <button value="4" onClick={handleTabToggle} className="friends-suggestions">Friend Suggestions</button>
+            <button value="5" onClick={handleTabToggle} className="add-friend">Add Friend</button>
+            <hr />
+            <button value="6" onClick={handleTabToggle} className="user-settings">User Settings</button>

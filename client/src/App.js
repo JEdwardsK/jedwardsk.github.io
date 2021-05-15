@@ -2,10 +2,11 @@
 import React from 'react'
 import LockScreen from './components/LockScreen'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { HomeScreen } from './components/HomeScreen'
-import FeaturedPage from './components/FeaturedPage'
-import ProfilePage from './components/ProfilePage'
-import SettingsPage from './components/SettingsPage'
+
+import FeaturedPage from './components/sitePages/FeaturedPage'
+import ProfilePage from './components/sitePages/ProfilePage'
+import SettingsPage from './components/sitePages/SettingsPage'
+import HomePage from './components/sitePages/HomePage'
 
 
 const App = () => {
@@ -23,7 +24,7 @@ const App = () => {
           <FeaturedPage/>
         </Route>
         <Route path="/home">
-          <HomeScreen />
+          <HomePage />
         </Route>
         <Route path="/">
           <LockScreen />

@@ -13,7 +13,7 @@ $brand-grey: #414548;
   font-family:'A-OTF Shin Go Pro R'
 }
 
-.skill-logo :hover {
+.profile-sidebar-headers, .highlight {
   animation: hover-focus 1s linear infinite;
 }
 
@@ -23,6 +23,7 @@ $brand-grey: #414548;
 .body {
   height: 80%
 }
+
 #root{
   height: 800px
 }
@@ -364,14 +365,14 @@ $brand-grey: #414548;
 
 @keyframes hover-focus {
   0% {
-    border: 2px solid cyan;
+    border: 5px solid cyan;
   }
   50% {
-    border: 2px solid darkcyan;
+    border: 5px solid darkcyan;
   }
 
   100% {
-    border: 2px solid cyan;
+    border: 5px solid cyan;
   }
 
 }

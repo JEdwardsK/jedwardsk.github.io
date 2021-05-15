@@ -5,22 +5,21 @@ import { useHistory } from 'react-router'
 import  Modal  from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
-import { projects } from '../helpers/projectsData'
+import { projects } from '../../helpers/projectsData'
 
-import ProjectsCard from './ProjectsCard'
-import SystemStatus from './SystemStatus'
-
-
-import homeClick from '../assets/sounds/Home.wav'
-import defaultClick from '../assets/sounds/Enter & Back.wav'
-import userClick from '../assets/sounds/User.wav'
-import settingsClick from '../assets/sounds/Settings.wav'
-import Footer from './Footer'
-
-import linkPic from '../assets/images/link.png'
+import ProjectsCard from '../ProjectsCard'
+import SystemStatus from '../SystemStatus'
 
 
-export const HomeScreen = () => {
+import homeClick from '../../assets/sounds/Home.wav'
+import defaultClick from '../../assets/sounds/Enter & Back.wav'
+import userClick from '../../assets/sounds/User.wav'
+import settingsClick from '../../assets/sounds/Settings.wav'
+import Footer from '../Footer'
+
+
+
+const HomePage = () => {
   const [projectToModal, setProjectToModal] = useState('')
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [textIndex, setTextIndex] = useState(-1)
@@ -126,3 +125,5 @@ export const HomeScreen = () => {
     </>
   )
 }
+
+export default HomePage
