@@ -1,6 +1,6 @@
 $brand-red: #e60012;
 $brand-grey: #414548;
-
+@import "~bootstrap/scss/bootstrap";
 
 @font-face {
   font-family: 'A-OTF Shin Go Pro R';
@@ -96,6 +96,8 @@ $brand-grey: #414548;
 .homescreen-container {
   .profile, .homescreen-buttons {
     border-radius: 50%;
+    width:80px;
+    height: 80px;
   }
   display: flex;
   flex-direction: column;
@@ -113,14 +115,14 @@ $brand-grey: #414548;
     height: 70%;
     .carousel {
       background-color: paleturquoise;
-      display: flex;
       height: 100%;
       align-items: center;
+      overflow-inline: scroll;
       .carousel-items, .all-projects {
-        background-color: orange;
-        border: 2px solid black;
-        width: 300px;
-        height: 300px
+        display: inline-block;
+        margin:25px;
+        width: 400px;
+        height: 400px
       }
     }
 
@@ -186,3 +188,44 @@ $brand-grey: #414548;
 
 }
 
+.team-member {
+  display: flex;
+  justify-content: space-between;
+  a {
+  color: $brand-red;
+  flex: .5;
+  align-self:right;
+  };
+  a :hover {
+    color:$brand-grey;
+  }
+  p {
+    flex: 2
+  }
+
+}
+
+.skills-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .skill{
+    flex: 0 0 20%;
+    display: flex;
+    width: 6rem;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    .skill-logo{
+
+    };
+
+    .skill-name{
+      flex: 1;
+      text-align: center;
+      justify-self: center;
+    }
+  }
+}
