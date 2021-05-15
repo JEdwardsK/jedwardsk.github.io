@@ -17,10 +17,13 @@ import userClick from '../assets/sounds/User.wav'
 import settingsClick from '../assets/sounds/Settings.wav'
 import Footer from './Footer'
 
+import linkPic from '../assets/images/link.png'
+
+
 export const HomeScreen = () => {
   const [projectToModal, setProjectToModal] = useState('')
   const [isModalVisible, setIsModalVisible] = useState(false)
-
+  const [textIndex, setTextIndex] = useState(-1)
   const homeSound = new Audio(homeClick)
   const defaultClickSound = new Audio(defaultClick)
   const profileSound = new Audio(userClick)
@@ -37,6 +40,15 @@ export const HomeScreen = () => {
     setIsModalVisible(true)
   }
 
+  const handleMouseEnter = (event) => {
+    const { value } = event.target
+    setTextIndex(Number(value))
+  }
+  const handleMouseExit = () => {
+    setTextIndex(-1)
+  }
+
+
   const handlePageChange = (event) => {
     const { name } = event.target
     if (name === 'profile') {
@@ -52,20 +64,34 @@ export const HomeScreen = () => {
     <>
       <div className="homescreen-container">
         <div className="homescreen-header">
-          <button className="profile" name="profile" onClick={handlePageChange}>profilepic</button>
+          <button className="profile" name="profile" onClick={handlePageChange}></button>
           <SystemStatus/>
         </div>
-        <div className="homescreen-body">
+        <div className="homescreen-body body">
           <div className="carousel">
             {projects.map((project, index) => {
               const { image, title, tagLine } = project
               return (
-                <div className="carousel-item-container" key={index}>
-                  <p className="scrolling-text"><span>{`${title} - ${tagLine}`}</span></p>
-                  <button  onClick={handleProjectModal} className="carousel-items" name={title} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
-                    {/* <img className="carousel-items" src={image} alt={`preview of project: ${title}`} name='test' ></img> */}
-                  </button>
-                </div>
+                <>
+                  <div className="carousel-item-container" key={index}>
+                    { textIndex === index &&
+                      <div className="scrolling-text"><span>{`${title} - ${tagLine}`}</span></div>
+                    }
+
+                    <button onClick={handleProjectModal} className="carousel-items highlight" name={title} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} value={index}>
+                      {/* <img className="carousel-items" src={image} alt={`preview of project: ${title}`} name='test' ></img> */}
+                    </button>
+                  </div>
+                  <div className="carousel-item-container" key={index}>
+                    { textIndex === index &&
+                      <div className="scrolling-text"><span>{`${title} - ${tagLine}`}</span></div>
+                    }
+
+                    <button onClick={handleProjectModal} className="carousel-items highlight" name={title} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} value={index}>
+                      {/* <img className="carousel-items" src={image} alt={`preview of project: ${title}`} name='test' ></img> */}
+                    </button>
+                  </div>
+                </>
               )
             })
             }

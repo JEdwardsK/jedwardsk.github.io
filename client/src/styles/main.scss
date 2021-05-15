@@ -13,7 +13,16 @@ $brand-grey: #414548;
   font-family:'A-OTF Shin Go Pro R'
 }
 
+.skill-logo :hover {
+  animation: hover-focus 1s linear infinite;
+}
 
+.header {
+  height: 10%
+}
+.body {
+  height: 70%
+}
 #root{
   height: 800px
 }
@@ -110,35 +119,48 @@ $brand-grey: #414548;
     background-color: violet;
     height: 10%;
     .profile {
-
+      background-image: url('../assets/images/link.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
   .homescreen-body {
-    background-color: thistle;
-    height: 70%;
+    // background-color: thistle;
+    // height: 70%;
     .carousel {
       display: flex;
-      background-color: paleturquoise;
+      // background-color: paleturquoise;
       height: 100%;
       align-items: center;
       overflow-inline: scroll;
       .carousel-item-container {
         position: relative;
-        .scrollingtext {
+
+        .scrolling-text {
           overflow:hidden;
-          margin:0;
-          width: 430px;
-          border: 5px solid gold;
-          animation: text-scroll 10s linear infinite;
+          // margin: 0 auto;
+          white-space: nowrap;
+          position: absolute;
+          top:-25px;
+          margin: 0 25px 25px;
+          width: 400px;
+          span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: text-scroll 12s linear infinite, text-focus 1s linear infinite;
+          }
         }
-        .scrollingtext span {
-          display: inline-block;
-          padding-left: 100%;
-          animation: marquee 10s linear infinite;
-        }
+
+        // .scrolling-text span {
+        //   display: inline;
+        //   animation: text-scroll 1s linear infinite;
+
+
+        // }
       }
       .carousel-items, .all-projects {
-        display: inline-block;
+        display: inline;
         margin:25px;
         margin-top: 0;
         width: 400px;
@@ -261,13 +283,12 @@ $brand-grey: #414548;
 }
 
 .skills {
-  .skills-container{
+  .play-container{
     display: flex;
   .skill{
     flex: 0 0 20%;
     display: flex;
     width: 6rem;
-    color: orange;
     flex-direction: column;
     justify-content: center;
     align-content: center;
@@ -308,16 +329,6 @@ $brand-grey: #414548;
     }
   }
 }
-
-@keyframes text-scroll {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-100%, 0);
-  }
-}
-
 .footer-container {
     display: flex;
     height: 10%;
@@ -334,3 +345,48 @@ $brand-grey: #414548;
       }
     }
   }
+
+@keyframes text-scroll {
+    0% {
+    transform: translate(0, 0);
+    color: 2px solid cyan;
+
+  }
+  50% {
+    color: 2px solid darkcyan;
+  }
+  100% {
+    transform: translate(-100%, 0);
+    color: 2px solid cyan;
+
+  }
+}
+
+@keyframes hover-focus {
+  0% {
+    border: 2px solid cyan;
+  }
+  50% {
+    border: 2px solid darkcyan;
+  }
+
+  100% {
+    border: 2px solid cyan;
+  }
+
+}
+
+@keyframes text-focus {
+  0% {
+    color: cyan;
+  }
+  50% {
+    color: darkcyan;
+  }
+
+  100% {
+    color: cyan;
+  }
+
+}
+

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
+import { useHistory, useLocation } from 'react-router'
 
 import SystemStatus from './SystemStatus'
 
@@ -21,20 +21,22 @@ const LockScreen = () => {
   const startUpSound = new Audio(turnOnSound)
   const failClick = new Audio(failSound)
   const featuredSound = new Audio(newsSound)
+  const location = useLocation()
 
-
-  // useEffect(() => {
-  //   document.addEventListener('keyup', handleKeyPress)
-  //   if (continueCounter === 4) {
-  //     document.removeEventListener('keyup', handleKeyPress)
-  //     history.push('/home')
-  //   } else if (featuredCounter === 4) {
-  //     featuredSound.play()
-  //     document.removeEventListener('keydown', handleKeyPress)
-  //     history.push('/featured')
-  //     return
-  //   }
-  // })
+  useEffect(() => {
+    if (location.pathname === '/') {
+      document.addEventListener('keyup', handleKeyPress)
+      if (continueCounter === 4) {
+        document.removeEventListener('keyup', handleKeyPress)
+        history.push('/home')
+      } else if (featuredCounter === 4) {
+        featuredSound.play()
+        document.removeEventListener('keydown', handleKeyPress)
+        history.push('/featured')
+        return
+      }
+    }
+  })
 
   const history = useHistory()
 

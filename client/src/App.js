@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { HomeScreen } from './components/HomeScreen'
 import FeaturedPage from './components/FeaturedPage'
 import ProfilePage from './components/ProfilePage'
+import SettingsPage from './components/SettingsPage'
 
 
 const App = () => {
@@ -12,6 +13,9 @@ const App = () => {
 
     <BrowserRouter>
       <Switch>
+        <Route path="/settings">
+          <SettingsPage/>
+        </Route>
         <Route path="/profile">
           <ProfilePage/>
         </Route>
