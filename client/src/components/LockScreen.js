@@ -1,7 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
+
 import SystemStatus from './SystemStatus'
+
+import defaultClick from '../assets/sounds/Enter & Back.wav'
+import turnOnSound from '../assets/sounds/Turn On.wav'
+import failSound from '../assets/sounds/Error.wav'
+import newsSound from '../assets/sounds/News.wav'
+
+
 
 const LockScreen = () => {
   const [continueCounter, setContinueCounter] = useState(0)
@@ -9,12 +17,19 @@ const LockScreen = () => {
   const [sidebarWidth, setSidebarWidth] = useState('25%')
   const [mainWidth, setMainWidth] = useState('75%')
 
+  const defaultClickSound = new Audio(defaultClick)
+  const startUpSound = new Audio(turnOnSound)
+  const failClick = new Audio(failSound)
+  const featuredSound = new Audio(newsSound)
+
+
   useEffect(() => {
-    document.addEventListener('keydown', handleKeyPress)
+    document.addEventListener('keyup', handleKeyPress)
     if (continueCounter === 4) {
-      document.removeEventListener('keydown', handleKeyPress)
+      document.removeEventListener('keyup', handleKeyPress)
       history.push('/home')
     } else if (featuredCounter === 4) {
+      featuredSound.play()
       document.removeEventListener('keydown', handleKeyPress)
       history.push('/featured')
     }
@@ -40,14 +55,18 @@ const LockScreen = () => {
   const handleKeyPress = ({ key, keyCode }) => {
     console.log(key + keyCode)
     if (keyCode === 65) {
-      let newACount = continueCounter
-      newACount++
       if (featuredCounter !== 0) {
+        failClick.play()
         setSidebarWidth('25%')
         setMainWidth('75%')
         setFeaturedCounter(0)
         setContinueCounter(0)
-      } else setContinueCounter(newACount)
+      } else {
+        defaultClickSound.play()
+        let newACount = continueCounter
+        newACount++
+        setContinueCounter(newACount)
+      }
     } else if (keyCode === 89) {
       let newYCount = featuredCounter
       newYCount++
@@ -56,6 +75,7 @@ const LockScreen = () => {
       setContinueCounter(0)
       setFeaturedCounter(newYCount)
     } else {
+      failClick.play()
       setContinueCounter(0)
       setFeaturedCounter(0)
       setSidebarWidth('25%')

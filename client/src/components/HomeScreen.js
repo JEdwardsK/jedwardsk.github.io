@@ -1,40 +1,71 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router'
+
 import  Modal  from 'react-bootstrap/Modal'
-import  Button  from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
+
 import { projects } from '../helpers/projectsData'
+
 import ProjectsCard from './ProjectsCard'
 import SystemStatus from './SystemStatus'
-import HomeSound from '../assets/sounds/Home.wav'
-import defaultClick from '../'
+
+
+import homeClick from '../assets/sounds/Home.wav'
+import defaultClick from '../assets/sounds/Enter & Back.wav'
+import userClick from '../assets/sounds/User.wav'
+import settingsClick from '../assets/sounds/Settings.wav'
+import Footer from './Footer'
 
 export const HomeScreen = () => {
   const [projectToModal, setProjectToModal] = useState('')
   const [isModalVisible, setIsModalVisible] = useState(false)
-  // on page load, play bloop sound
-  const homeSound = new Audio(HomeSound)
+
+  const homeSound = new Audio(homeClick)
+  const defaultClickSound = new Audio(defaultClick)
+  const profileSound = new Audio(userClick)
+  const settingsSound = new Audio(settingsClick)
+
+  const history = useHistory()
+
   useEffect(() => homeSound.play(), [])
+
   const handleProjectModal = (event) => {
     const { name } = event.target
     setProjectToModal(name)
+    defaultClickSound.play()
     setIsModalVisible(true)
+  }
+
+  const handlePageChange = (event) => {
+    const { name } = event.target
+    if (name === 'profile') {
+      profileSound.play()
+      history.push('/profile')
+    } else if (name === 'settings') {
+      settingsSound.play()
+      history.push('/settings')
+    }
   }
   const handleCloseModal = () => setIsModalVisible(false)
   return (
     <>
       <div className="homescreen-container">
         <div className="homescreen-header">
-          <Link to="/profile"><button className="profile">profilepic</button></Link>
+          <button className="profile" name="profile" onClick={handlePageChange}>profilepic</button>
           <SystemStatus/>
         </div>
         <div className="homescreen-body">
           <div className="carousel">
             {projects.map((project, index) => {
-              const { image, title } = project
+              const { image, title, tagLine } = project
               return (
-                <button key={index} onClick={handleProjectModal} className="carousel-items" name={title} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
-                  {/* <img className="carousel-items" src={image} alt={`preview of project: ${title}`} name='test' ></img> */}
-                </button>
+                <div className="carousel-item-container" key={index}>
+                  <p className="scrolling-text"><span>{`${title} - ${tagLine}`}</span></p>
+                  <button  onClick={handleProjectModal} className="carousel-items" name={title} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
+                    {/* <img className="carousel-items" src={image} alt={`preview of project: ${title}`} name='test' ></img> */}
+                  </button>
+                </div>
               )
             })
             }
@@ -48,13 +79,14 @@ export const HomeScreen = () => {
           <button className="homescreen-buttons">LinkedIn</button>
           <button className="homescreen-buttons">CodePen</button>
           <button className="homescreen-buttons">Mobile Site</button>
-          <button className="homescreen-buttons">Settings</button>
+          <button name="settings" onClick={handlePageChange}className="homescreen-buttons">Settings</button>
           <button className="homescreen-buttons">Return Home</button>
         </div>
-        <div className="homescreen-footer">
+        <Footer/>
+        {/* <div className="homescreen-footer">
           <div className="placeholder-switch"></div>
           <div className="ok-button-container"><button className="a-button"></button></div>
-        </div>
+        </div> */}
         <Modal
           show={isModalVisible}
           onHide={handleCloseModal}

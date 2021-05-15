@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import LockScreen from './components/LockScreen'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { HomeScreen } from './components/HomeScreen'
 import FeaturedPage from './components/FeaturedPage'
 import ProfilePage from './components/ProfilePage'
+
 
 const App = () => {
   return (
@@ -23,6 +25,7 @@ const App = () => {
           <LockScreen />
         </Route>
       </Switch>
+
     </BrowserRouter>
 
   )
