@@ -1,3 +1,19 @@
+$brand-red: #e60012;
+$brand-grey: #414548;
+
+
+@font-face {
+  font-family: 'A-OTF Shin Go Pro R';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/a-otf-shin-go-pro-cufonfonts-webfont/AOTFShinGoProRegular.woff') format('woff');
+}
+
+* {
+  font-family:'A-OTF Shin Go Pro R'
+}
+
+
 #root{
   height: 800px
 }
@@ -6,19 +22,37 @@
   height: 100%;
   width:100%;
   .sidebar {
-    background-color: darkgrey;
-    // width: 25%;
+    background-color: $brand-grey;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .featured {
+    .alt-featured-container {
+      display: flex;
+      height: 80%;
+      background-color:violet;
+      width: 100%;
+      .featured {
       background-color: yellow;
       height: 25%;
       width: 80%;
       margin: 5%;
     }
+  }
+    .featured-container {
+      display: flex;
+      flex:9;
+      flex-direction: column;
+      width:100%;
+      .featured {
+      background-color: yellow;
+      height: 25%;
+      width: 80%;
+      margin: 5%;
+    }
+  }
     .sidebar-featured-button-container {
+      flex:1;
       border: 2px solid red;
       display: flex;
       width: 80%;
@@ -34,7 +68,7 @@
     }
   }
   .main {
-    width: auto;
+    position:relative;
     .infobar-container {
 
     }
@@ -58,3 +92,97 @@
     }
   }
 }
+
+.homescreen-container {
+  .profile, .homescreen-buttons {
+    border-radius: 50%;
+  }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .homescreen-header {
+    display: flex;
+    background-color: violet;
+    height: 10%;
+    .profile {
+
+    }
+  }
+  .homescreen-body {
+    background-color: thistle;
+    height: 70%;
+    .carousel {
+      background-color: paleturquoise;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      .carousel-items, .all-projects {
+        background-color: orange;
+        border: 2px solid black;
+        width: 300px;
+        height: 300px
+      }
+    }
+
+  }
+  .homescreen-body-buttons {
+      color: black;
+      height: 10%;
+      display: flex;
+      justify-content: space-around;
+    }
+  .homescreen-footer {
+    display: flex;
+    height: 10%;
+    background-color: blue;
+    .placeholder-switch {
+
+    }
+    .ok-button-container {
+      button {
+
+      }
+      p {
+
+      }
+    }
+  }
+
+}
+
+.date-container {
+  background-color: violet;
+  position: absolute;
+  z-index: 1;
+  margin-right: 10px;
+  right: 0;
+  width:200px;
+  display: flex;
+  justify-content: space-evenly;
+  p {
+  margin: 0;
+  font-size: 20px;
+}
+}
+
+.profile-page-container {
+  height:400px;
+  background-color: burlywood;
+  position: relative;
+  display: flex;
+  .profile-sidebar {
+    position:sticky;
+    top: 0;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-main {
+    overflow: auto;
+    width: 75%;
+    left:25%
+  }
+
+}
+
