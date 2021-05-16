@@ -1,5 +1,7 @@
 $brand-red: #e60012;
 $brand-grey: #414548;
+$hover-colour: cyan;
+$layout: 2px solid red;
 @import "~bootstrap/scss/bootstrap";
 
 @font-face {
@@ -10,7 +12,8 @@ $brand-grey: #414548;
 }
 
 * {
-  font-family:'A-OTF Shin Go Pro R'
+  font-family:'A-OTF Shin Go Pro R';
+  background-color: whitesmoke;
 }
 
 .profile-sidebar-headers, .highlight {
@@ -107,7 +110,7 @@ $brand-grey: #414548;
 
 //? HOMESCREEN STYLING
 .homescreen-container {
-  .profile, .homescreen-buttons {
+  .profile, .homescreen-button {
     border-radius: 50%;
     width:80px;
     height: 80px;
@@ -117,15 +120,27 @@ $brand-grey: #414548;
   height: 100%;
   .homescreen-header {
     display: flex;
-    background-color: violet;
+    border: $layout;
     height: 10%;
+    margin: 20px 50px 0 50px;
+    justify-content: space-between;
+    align-items: center;
     .profile {
       background-image: url('../assets/images/link.png');
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      border: 3px solid white;
     }
   }
+
+  #nintendo-online, #news-button, #eshop-button, #album-button, #controller-button, #settings-button, #sleep-button {
+    background-image: url('https://vignette.wikia.nocookie.net/nintendo/images/d/de/Nintendo_Switch_Online_-_App_icon.svg/revision/latest?cb=20170719034029&path-prefix=en');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
   .homescreen-body {
     // background-color: thistle;
     // height: 70%;
@@ -137,41 +152,66 @@ $brand-grey: #414548;
       overflow-inline: scroll;
       .carousel-item-container {
         position: relative;
-
+        :first-child {
+          margin-left: 20px;
+        }
         .scrolling-text {
+          align-self: center;
           overflow:hidden;
           // margin: 0 auto;
           white-space: nowrap;
           position: absolute;
-          top:-25px;
+          z-index: 3;
+          top:-30px;
           margin: 0 25px 25px;
           width: 400px;
           span {
             display: inline-block;
-            padding-left: 100%;
-            animation: text-scroll 12s linear infinite, text-focus 1s linear infinite;
+            // padding-left: 100%;
+            color: $hover-colour;
+            // animation: text-scroll 12s linear infinite
+            // text-focus 1s linear infinite;
           }
         }
 
         // .scrolling-text span {
         //   display: inline;
         //   animation: text-scroll 1s linear infinite;
-
-
         // }
+        .carousel-item {
+          border: 3px solid white;
+          display: inline;
+          margin:10px;
+          margin-top: 0;
+          width: 300px;
+          height: 300px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .carousel-item.all-projects {
+          border: $layout;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          p {
+            position: absolute;
+            margin: 0;
+            font-size: 25px;
+          }
+          button {
+            position: absolute;
+            height: 70%;
+            width: 70%;
+            top: 15%;
+            border-radius: 50%;
+          }
+
+        }
+
       }
-      .carousel-item, .all-projects {
-        display: inline;
-        margin:25px;
-        margin-top: 0;
-        width: 400px;
-        height: 400px
-      }
-      .carousel-item {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+
     }
 
   }
@@ -188,8 +228,7 @@ $brand-grey: #414548;
 
 //? DATE COMPONENT STYLING
 .date-container {
-  background-color: violet;
-  position: absolute;
+  border: $layout;
   z-index: 1;
   margin-right: 10px;
   right: 0;
@@ -199,7 +238,9 @@ $brand-grey: #414548;
   p {
   margin: 0;
   font-size: 20px;
-}
+  }
+
+
 }
 
 //? PROFILE PAGE STYLING
@@ -216,20 +257,22 @@ $brand-grey: #414548;
   flex-direction: column;
 }
 
-.profile-page-body {
+.profile-page-body, .settings-page-body {
   height:400px;
   background-color: burlywood;
   position: relative;
   display: flex;
-  .profile-sidebar {
+  .profile-sidebar, .settings-sidebar{
     position:sticky;
     top: 0;
     width: 25%;
+    background-color: red;
     display: flex;
     flex-direction: column;
+    overflow: auto;
   }
 
-  .profile-main {
+  .profile-main, .settings-main {
     overflow: auto;
     width: 75%;
     left:25%;
@@ -264,7 +307,9 @@ $brand-grey: #414548;
   }
 
 }
-
+.settings-main:first-child{
+  overflow: auto;
+}
 .play-activity-header {
   display: flex;
   justify-content: space-around;
@@ -355,44 +400,43 @@ $brand-grey: #414548;
 @keyframes text-scroll {
     0% {
     transform: translate(0, 0);
-    color: 2px solid cyan;
+    // color: 4px solid cyan;
 
   }
   50% {
-    color: 2px solid darkcyan;
+    // color: 4px solid darkcyan;
   }
   100% {
     transform: translate(-100%, 0);
-    color: 2px solid cyan;
+    // color: 4px solid cyan;
 
   }
 }
 
 @keyframes hover-focus {
   0% {
-    border: 5px solid cyan;
+    outline: 5px solid cyan;
   }
   50% {
-    border: 5px solid darkcyan;
+    outline: 5px solid darkcyan;
   }
 
   100% {
-    border: 5px solid cyan;
+    outline: 5px solid cyan;
   }
 
 }
 
-@keyframes text-focus {
-  0% {
-    color: cyan;
-  }
-  50% {
-    color: darkcyan;
-  }
+// @keyframes text-focus {
+//   0% {
+//     color: cyan;
+//   }
+//   50% {
+//     color: darkcyan;
+//   }
 
-  100% {
-    color: cyan;
-  }
+//   100% {
+//     color: cyan;
+//   }
 
-}
-
+// }

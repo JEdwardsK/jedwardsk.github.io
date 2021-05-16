@@ -36,7 +36,7 @@ const SettingsPage = () => {
       </div>
       <hr />
       <div className="settings-page-body body">
-        <div className="settings-page-sidebar">
+        <div className="settings-sidebar">
           {sidebarHeaders.map((header, index) => {
             return (
               <button

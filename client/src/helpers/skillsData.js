@@ -17,44 +17,41 @@ import typescriptLogo from '../assets/logos/typescript.png'
 
   //#region skills Arrays
   class Skill {
-    constructor(name, icon, altImage, time) {
-      this.name = name,
-        this.icon = icon,
-        this.altImage = altImage
-      // this.experience = experience(time) {
-      //   return time === -1
-      // time === 0 ? 'Game Installed' :
-      //   (time > 0 && time <= 20) ? 'Played for a little while'
-      //     (time > 20 && time < 20) ? 'Played for a little while' :
-      //     'played'
-
-      // }
-    }
+  constructor(name, icon, altImage, time) {
+    this.name = name
+    this.icon = icon
+    this.altImage = altImage
+    this.experience =
+      time < 0 ? 'Game not in system'
+        : time === 0 ? 'Game Installed'
+          : (time > 0 && time <= 20) ? 'Played for a little while'
+            : `Played for ${time} hours`
   }
-  const javaScript = new Skill('Javascript', faJsSquare)
-  const html = new Skill('HTML', faHtml5)
-  const css = new Skill('CSS', faCss3)
-  const react = new Skill('React (Hooks)', faReact)
-  const nodeJs = new Skill('Nodejs', faNodeJs)
-  const express = new Skill('Express', null, expressLogo )
-  const insomnia = new Skill('Insomnia', null,insomniaLogo )
-  const mongoose = new Skill('Mongoose ODM', null, mongooseLogo)
-  const yarn = new Skill('Yarn', faYarn)
-  const pip = new Skill('Pip', null, pipLogo)
-  const pipenv = new Skill('Pipenv', faPython)
-  const python = new Skill('Python', faPython)
-  const postgresql = new Skill('PostgreSQL', null, postgresqlLogo)
-  const tablePlus = new Skill('TablePlus', null, tableplusLogo)
-  const mongodb = new Skill('MongoDB', null, mongodbLogo)
-  const django = new Skill('Django', null, djangoLogo)
-  const sCSS = new Skill('SCSS', faSass)
-  const bulma = new Skill('Bulma', null, bulmaLogo)
-  const bootstrap = new Skill('Bootstrap', faBootstrap)
-  const typescript = new Skill('TypeScript', null, typescriptLogo)
-  const aWS = new Skill('AWS', faAws)
-  const reactNative = new Skill('React Native', faReact)
-  const tailwind = new Skill('Tailwind', null, tailwindLogo)
-  const nextJS = new Skill('NextJS', null, nextjsLogo)
+}
+  const javaScript = new Skill('Javascript', faJsSquare, null, 20)
+  const html = new Skill('HTML', faHtml5, null, 20)
+  const css = new Skill('CSS', faCss3,null, 20)
+  const react = new Skill('React (Hooks)', faReact, 20)
+  const nodeJs = new Skill('Nodejs', faNodeJs, null, 20)
+  const express = new Skill('Express', null, expressLogo, 20)
+  const insomnia = new Skill('Insomnia', null,insomniaLogo, 20 )
+  const mongoose = new Skill('Mongoose ODM', null, mongooseLogo, 20)
+  const yarn = new Skill('Yarn', faYarn, null, 20)
+  const pip = new Skill('Pip', null, pipLogo, 20)
+  const pipenv = new Skill('Pipenv', faPython, null, 20)
+  const python = new Skill('Python', faPython, null, 20)
+  const postgresql = new Skill('PostgreSQL', null, postgresqlLogo, 10)
+  const tablePlus = new Skill('TablePlus', null, tableplusLogo, 10)
+  const mongodb = new Skill('MongoDB', null, mongodbLogo, 10)
+  const django = new Skill('Django', null, djangoLogo, 20)
+  const sCSS = new Skill('SCSS', faSass, null, 10)
+  const bulma = new Skill('Bulma', null, bulmaLogo, 10)
+  const bootstrap = new Skill('Bootstrap', faBootstrap, null, 10)
+  const typescript = new Skill('TypeScript', null, typescriptLogo, 0)
+  const aWS = new Skill('AWS', faAws, null, -1)
+  const reactNative = new Skill('React Native', faReact, null, -1)
+  const tailwind = new Skill('Tailwind', null, tailwindLogo, -1)
+  const nextJS = new Skill('NextJS', null, nextjsLogo, -1)
 
 export const currentSkills = [
   javaScript, html, css, react, nodeJs, express, insomnia, mongoose, yarn, pip, pipenv, python, postgresql,
