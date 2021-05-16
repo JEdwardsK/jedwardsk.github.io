@@ -160,12 +160,17 @@ $brand-grey: #414548;
 
         // }
       }
-      .carousel-items, .all-projects {
+      .carousel-item, .all-projects {
         display: inline;
         margin:25px;
         margin-top: 0;
         width: 400px;
         height: 400px
+      }
+      .carousel-item {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     }
 

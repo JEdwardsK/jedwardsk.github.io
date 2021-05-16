@@ -23,6 +23,8 @@ const HomePage = () => {
   const [projectToModal, setProjectToModal] = useState('')
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [textIndex, setTextIndex] = useState(-1)
+  const [focusClass, setFocusClass] = useState('')
+
   const homeSound = new Audio(homeClick)
   const defaultClickSound = new Audio(defaultClick)
   const profileSound = new Audio(userClick)
@@ -40,11 +42,13 @@ const HomePage = () => {
   }
 
   const handleMouseEnter = (event) => {
-    const { value } = event.target
+    const { value, className } = event.target
     setTextIndex(Number(value))
+    setFocusClass('highlight')
   }
   const handleMouseExit = () => {
     setTextIndex(-1)
+    setFocusClass('')
   }
 
 
@@ -76,8 +80,7 @@ const HomePage = () => {
                     <div className="scrolling-text"><span>{`${title} - ${tagLine}`}</span></div>
                   }
 
-                  <button onClick={handleProjectModal} className="carousel-items highlight" name={title} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} value={index}>
-                    {/* <img className="carousel-items" src={image} alt={`preview of project: ${title}`} name='test' ></img> */}
+                  <button onClick={handleProjectModal} className={`carousel-item ${textIndex === index && focusClass}`} name={title} style={{ backgroundImage: `url(${image})` }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} value={index}>
                   </button>
                 </div>
               )
