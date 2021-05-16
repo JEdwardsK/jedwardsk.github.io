@@ -18,7 +18,6 @@ const ProfilePage = () => {
 
   const [tabVisible, setTabVisible] = useState(0)
   const [hoverFocus, setHoverFocus] = useState(-1)
-  const [textColour, setTextColour] = useState('')
   const handleTabToggle = (event) => {
     const { value } = event.target
     const input = parseInt(value)
@@ -30,11 +29,9 @@ const ProfilePage = () => {
   const handleMouseEnter = (event) => {
     const { value } = event.target
     setHoverFocus(Number(value))
-    setTextColour('blue')
   }
   const handleMouseExit = () => {
     setHoverFocus(-1)
-    setTextColour('')
   }
 
 
@@ -57,7 +54,10 @@ const ProfilePage = () => {
                   onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
                   style={
                     {
-                      color: `${hoverFocus === index ? textColour : '' }`,
+
+                      color: `${hoverFocus === index ? 'blue' : ''}`,
+                      backgroundColor: `${hoverFocus === index ? 'white' : 'transparent'}`,
+                      // borderLeft: `${hoverFocus === index ? '5px solid blue' : '5px solid transparent'}`,
                     }
                   }
                 >

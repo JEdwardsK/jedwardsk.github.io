@@ -2,7 +2,8 @@ $brand-red: #e60012;
 $brand-grey: #414548;
 $hover-colour: rgb(0, 187, 187);
 $layout: 2px solid red;
-$background-default: whitesmoke;
+$background-default: rgb(238, 238, 238);
+$background-lighter: whitesmoke;
 @import "~bootstrap/scss/bootstrap";
 
 @font-face {
@@ -313,23 +314,31 @@ hr {
   display: flex;
   .profile-sidebar, .settings-sidebar{
     position:sticky;
+    background-color: $background-lighter;
     top: 0;
     width: 100% *(1/3);
-    background-color: $background-default;
     display: flex;
     flex-direction: column;
     overflow: auto;
     overflow-y: scroll;
     .profile-sidebar-headers {
-      background-color: transparent;
-      height: 120px;
+      border:none;
+      text-align: left;
+      font-size: 25px;
+      margin: 20px;
+      padding: 20px 0;
+      padding-left: 10px;
     }
+    // .profile-sidebar-headers::after{
+    //   border: 2px solid orange;
+    // }
   }
 
   .profile-main, .settings-main {
     overflow: auto;
     width: 100% * (2/3);
     left:25%;
+    padding: 25px;
     .profile-profile-tab {
       background-color: blueviolet;
       .my-info {
