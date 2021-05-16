@@ -141,7 +141,10 @@ hr {
         font-size: 25px;
         position: absolute;
         width: auto;
+        left: -10px;
+        bottom: -60px;
         white-space: nowrap;
+        z-index: 2;
       }
     }
   }
