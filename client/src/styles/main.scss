@@ -2,6 +2,7 @@ $brand-red: #e60012;
 $brand-grey: #414548;
 $hover-colour: rgb(0, 187, 187);
 $layout: 2px solid red;
+$background-default: whitesmoke;
 @import "~bootstrap/scss/bootstrap";
 
 @font-face {
@@ -16,10 +17,11 @@ hr {
 }
 * {
   font-family:'A-OTF Shin Go Pro R';
-  background-color: whitesmoke;
+  background-color: $background-default;
 }
 
-.profile-sidebar-headers, .highlight {
+
+.highlight {
   animation: hover-focus 1s linear infinite;
 }
 
@@ -31,7 +33,8 @@ hr {
 }
 
 #root{
-  height: 800px
+  height: 800px;
+  border: 2px solid green;
 }
 //? LOCKSCREEN STYLING
 .lockscreen-container {
@@ -288,6 +291,12 @@ hr {
 
 //? PROFILE PAGE STYLING
 
+
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .profile-header {
   display: flex;
   img {
@@ -295,13 +304,10 @@ hr {
     width: 100px;
   }
 }
-.profile-page-container {
-  display: flex;
-  flex-direction: column;
-}
 
 .profile-page-body, .settings-page-body {
-  height:400px;
+  border: $layout;
+  height:640px;
   background-color: burlywood;
   position: relative;
   display: flex;
@@ -309,10 +315,13 @@ hr {
     position:sticky;
     top: 0;
     width: 25%;
-    background-color: red;
+    background-color: $background-default;
     display: flex;
     flex-direction: column;
     overflow: auto;
+    .profile-sidebar-headers {
+      background-color: transparent;
+    }
   }
 
   .profile-main, .settings-main {

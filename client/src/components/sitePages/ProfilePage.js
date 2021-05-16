@@ -17,7 +17,8 @@ import FriendSuggestionsTab from '../profileTabs/FriendSuggestionsTab'
 const ProfilePage = () => {
 
   const [tabVisible, setTabVisible] = useState(0)
-
+  const [hoverFocus, setHoverFocus] = useState(-1)
+  const [textColour, setTextColour] = useState('')
   const handleTabToggle = (event) => {
     const { value } = event.target
     const input = parseInt(value)
@@ -25,6 +26,18 @@ const ProfilePage = () => {
   }
 
   const sidebarHeaders = ['Profile','Friend List','Trending With Friends','Online Play Invitations','Friend Suggestions','Add Friend','User Settings']
+
+  const handleMouseEnter = (event) => {
+    const { value } = event.target
+    setHoverFocus(Number(value))
+    setTextColour('blue')
+  }
+  const handleMouseExit = () => {
+    setHoverFocus(-1)
+    setTextColour('')
+  }
+
+
   return (
     <>
       <div className="profile-page-container">
@@ -37,10 +50,17 @@ const ProfilePage = () => {
             {sidebarHeaders.map((header, index) => {
               return (
                 <button
-                  className="profile-sidebar-headers"
+                  className={`profile-sidebar-headers ${hoverFocus === index && 'highlight'}`}
                   key={index}
                   value={index}
-                  onClick={handleTabToggle}>
+                  onClick={handleTabToggle}
+                  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+                  style={
+                    {
+                      color: `${hoverFocus === index ? textColour : '' }`,
+                    }
+                  }
+                >
                   {header}
                 </button>
               )

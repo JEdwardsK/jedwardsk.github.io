@@ -24,8 +24,7 @@ import linkedinSVG from '../../assets/svgs/linkedin.svg'
 const HomePage = () => {
   const [projectToModal, setProjectToModal] = useState('')
   const [isModalVisible, setIsModalVisible] = useState(false)
-  const [textIndex, setTextIndex] = useState(-1)
-  // const [focusClass, setFocusClass] = useState('')
+  const [hoverFocus, setHoverFocus] = useState(-1)
 
   const homeSound = new Audio(homeClick)
   const defaultClickSound = new Audio(defaultClick)
@@ -45,12 +44,10 @@ const HomePage = () => {
 
   const handleMouseEnter = (event) => {
     const { value } = event.target
-    setTextIndex(Number(value))
-    // setFocusClass('highlight')
+    setHoverFocus(Number(value))
   }
   const handleMouseExit = () => {
-    setTextIndex(-1)
-    // setFocusClass('')
+    setHoverFocus(-1)
   }
 
   const nintendoOnline = 'https://vignette.wikia.nocookie.net/nintendo/images/d/de/Nintendo_Switch_Online_-_App_icon.svg/revision/latest?cb=20170719034029&path-prefix=en'
@@ -73,12 +70,12 @@ const HomePage = () => {
         <div className="homescreen-header header">
           <div className="profile-button-container">
             <button
-              className={`profile ${textIndex === -2 && focusClass}`}
+              className={`profile ${hoverFocus === -2 && focusClass}`}
               name="profile" value="-2"
               onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
               onClick={handlePageChange}
             />
-            {textIndex === -2 &&
+            {hoverFocus === -2 &&
               <p>{'JEdwardsK\'s Page'}</p>
             }
           </div>
@@ -90,11 +87,11 @@ const HomePage = () => {
               const { image, title, tagLine } = project
               return (
                 <div className="carousel-item-container" key={index}>
-                  { textIndex === index &&
+                  { hoverFocus === index &&
                     <div className="scrolling-text"><span>{`${title} - ${tagLine}`}</span></div>
                   }
 
-                  <button onClick={handleProjectModal} className={`carousel-item ${textIndex === index && focusClass}`} name={title} style={{ backgroundImage: `url(${image})` }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} value={index}>
+                  <button onClick={handleProjectModal} className={`carousel-item ${hoverFocus === index && focusClass}`} name={title} style={{ backgroundImage: `url(${image})` }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} value={index}>
                   </button>
                 </div>
               )
@@ -104,11 +101,11 @@ const HomePage = () => {
               <div
                 className="carousel-item all-projects"
               >
-                { textIndex === -10 &&
+                { hoverFocus === -10 &&
                   <p>All Projects</p>
                 }
                 <button
-                  className={`${textIndex === -10 && focusClass}`}
+                  className={`${hoverFocus === -10 && focusClass}`}
                   value="-10"
                   onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
                 />
@@ -119,74 +116,74 @@ const HomePage = () => {
 
             <div>
               <button
-                className={`homescreen-button ${textIndex === -3 && focusClass}`}
+                className={`homescreen-button ${hoverFocus === -3 && focusClass}`}
                 value="-3"
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
                 style={
                   {
-                    backgroundImage: `url(${textIndex === -3 ? githubSVG : nintendoOnline})`,
+                    backgroundImage: `url(${hoverFocus === -3 ? githubSVG : nintendoOnline})`,
                   }}
               />
-              { textIndex === -3 &&
+              { hoverFocus === -3 &&
                 <p className="button-tag">GitHub</p>
               }
             </div>
             <div>
               <button
-                className={`homescreen-button ${textIndex === -4 && focusClass}`}
+                className={`homescreen-button ${hoverFocus === -4 && focusClass}`}
                 value="-4"
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
               />
-              { textIndex === -4 &&
+              { hoverFocus === -4 &&
                 <p className="button-tag">LinkedIn</p>
               }
             </div>
             <div>
               <button
-                className={`homescreen-button ${textIndex === -5 && focusClass}`}
+                className={`homescreen-button ${hoverFocus === -5 && focusClass}`}
                 value="-5"
                 style={
                   { backgroundImage: eShopPic }
                 }
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
-              { textIndex === -5 &&
+              { hoverFocus === -5 &&
                 <p className="button-tag">Nintendo eShop</p>
               }
             </div>
             <div>
               <button
-                className={`homescreen-button ${textIndex === -6 && focusClass}`}
+                className={`homescreen-button ${hoverFocus === -6 && focusClass}`}
                 value="-6"
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
-              { textIndex === -6 &&
+              { hoverFocus === -6 &&
                 <p className="button-tag">Codepen</p>
               }
             </div>
             <div>
               <button
-                className={`homescreen-button ${textIndex === -7 && focusClass}`}
+                className={`homescreen-button ${hoverFocus === -7 && focusClass}`}
                 value="-7"
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
-              { textIndex === -7 &&
+              { hoverFocus === -7 &&
                 <p className="button-tag">Controllers</p>
               }
             </div>
             <div>
               <button
                 name="settings" onClick={handlePageChange}
-                className={`homescreen-button ${textIndex === -8 && focusClass}`}
+                className={`homescreen-button ${hoverFocus === -8 && focusClass}`}
                 value="-8"
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
-              { textIndex === -8 &&
+              { hoverFocus === -8 &&
                   <p className="button-tag">Settings</p>
               }
             </div>
             <div>
               <button
-                className={`homescreen-button ${textIndex === -9 && focusClass}`}
+                className={`homescreen-button ${hoverFocus === -9 && focusClass}`}
                 value="-9"
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
-              { textIndex === -9 &&
+              { hoverFocus === -9 &&
                   <p className="button-tag">Sleep Mode</p>
               }
             </div>
