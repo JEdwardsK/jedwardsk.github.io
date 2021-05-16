@@ -18,12 +18,14 @@ import settingsClick from '../../assets/sounds/Settings.wav'
 import Footer from '../Footer'
 
 import linkPic from '../../assets/images/link.png'
-
+import eShopPic from '../../assets/nintendo-icons/eshop.png'
+import githubSVG from '../../assets/svgs/github.svg'
+import linkedinSVG from '../../assets/svgs/linkedin.svg'
 const HomePage = () => {
   const [projectToModal, setProjectToModal] = useState('')
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [textIndex, setTextIndex] = useState(-1)
-  const [focusClass, setFocusClass] = useState('')
+  // const [focusClass, setFocusClass] = useState('')
 
   const homeSound = new Audio(homeClick)
   const defaultClickSound = new Audio(defaultClick)
@@ -31,7 +33,7 @@ const HomePage = () => {
   const settingsSound = new Audio(settingsClick)
 
   const history = useHistory()
-
+  const focusClass = 'highlight'
   useEffect(() => homeSound.play(), [])
 
   const handleProjectModal = (event) => {
@@ -44,11 +46,11 @@ const HomePage = () => {
   const handleMouseEnter = (event) => {
     const { value } = event.target
     setTextIndex(Number(value))
-    setFocusClass('highlight')
+    // setFocusClass('highlight')
   }
   const handleMouseExit = () => {
     setTextIndex(-1)
-    setFocusClass('')
+    // setFocusClass('')
   }
 
   const nintendoOnline = 'https://vignette.wikia.nocookie.net/nintendo/images/d/de/Nintendo_Switch_Online_-_App_icon.svg/revision/latest?cb=20170719034029&path-prefix=en'
@@ -69,15 +71,17 @@ const HomePage = () => {
     <>
       <div className="homescreen-container">
         <div className="homescreen-header header">
-          <button
-            className={`profile ${textIndex === -2 && focusClass}`}
-            name="profile" value="-2"
-            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
-            onClick={handlePageChange}
-          ></button>
-          {textIndex === -2 &&
-            <p>{'JEdwardsK\'s Page'}</p>
-          }
+          <div className="profile-button-container">
+            <button
+              className={`profile ${textIndex === -2 && focusClass}`}
+              name="profile" value="-2"
+              onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+              onClick={handlePageChange}
+            />
+            {textIndex === -2 &&
+              <p>{'JEdwardsK\'s Page'}</p>
+            }
+          </div>
           <SystemStatus/>
         </div>
         <div className="homescreen-body body">
@@ -97,54 +101,96 @@ const HomePage = () => {
             })
             }
             <div className="carousel-item-container">
-              <div className="carousel-item all-projects">
-                <p>All Software</p>
-                <button></button>
+              <div
+                className="carousel-item all-projects"
+              >
+                { textIndex === -10 &&
+                  <p>All Projects</p>
+                }
+                <button
+                  className={`${textIndex === -10 && focusClass}`}
+                  value="-10"
+                  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+                />
               </div>
             </div>
           </div>
-        </div>
-        <div className="homescreen-body-buttons">
+          <div className="homescreen-body-buttons">
 
-          <button
-            id="nintendo-online"
-            className={`homescreen-button ${textIndex === -3 && focusClass}`}
-            value="-3"
-            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
-          ></button>
-          <button
-            // id="news-button"
-            className={`homescreen-button ${textIndex === -4 && focusClass}`}
-            value="-4"
-            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
-          >Email</button>
-          <button
-            id={textIndex === -5 && 'eshop-button'}
-            className={`homescreen-button ${textIndex === -5 && focusClass}`}
-            value="-5"
-            style={{ backgroundImage: `url(${linkPic})` }}
-            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}>LinkedIn</button>
-          <button
-            id="album-button"
-            className={`homescreen-button ${textIndex === -6 && focusClass}`}
-            value="-6"
-            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}>CodePen</button>
-          <button
-            id="controller-button"
-            className={`homescreen-button ${textIndex === -7 && focusClass}`}
-            value="-7"
-            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}>Mobile Site</button>
-          <button
-            id="settings-button"
-            name="settings" onClick={handlePageChange}
-            className={`homescreen-button ${textIndex === -8 && focusClass}`}
-            value="-8"
-            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}>Settings</button>
-          <button
-            id="sleep-button"
-            className={`homescreen-button ${textIndex === -9 && focusClass}`}
-            value="-9"
-            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}>Return Home</button>
+            <div>
+              <button
+                className={`homescreen-button ${textIndex === -3 && focusClass}`}
+                value="-3"
+                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+                style={
+                  {
+                    backgroundImage: `url(${textIndex === -3 ? githubSVG : nintendoOnline})`,
+                  }}
+              />
+              { textIndex === -3 &&
+                <p className="button-tag">GitHub</p>
+              }
+            </div>
+            <div>
+              <button
+                className={`homescreen-button ${textIndex === -4 && focusClass}`}
+                value="-4"
+                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+              />
+              { textIndex === -4 &&
+                <p className="button-tag">LinkedIn</p>
+              }
+            </div>
+            <div>
+              <button
+                className={`homescreen-button ${textIndex === -5 && focusClass}`}
+                value="-5"
+                style={
+                  { backgroundImage: eShopPic }
+                }
+                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
+              { textIndex === -5 &&
+                <p className="button-tag">Nintendo eShop</p>
+              }
+            </div>
+            <div>
+              <button
+                className={`homescreen-button ${textIndex === -6 && focusClass}`}
+                value="-6"
+                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
+              { textIndex === -6 &&
+                <p className="button-tag">Codepen</p>
+              }
+            </div>
+            <div>
+              <button
+                className={`homescreen-button ${textIndex === -7 && focusClass}`}
+                value="-7"
+                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
+              { textIndex === -7 &&
+                <p className="button-tag">Controllers</p>
+              }
+            </div>
+            <div>
+              <button
+                name="settings" onClick={handlePageChange}
+                className={`homescreen-button ${textIndex === -8 && focusClass}`}
+                value="-8"
+                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
+              { textIndex === -8 &&
+                  <p className="button-tag">Settings</p>
+              }
+            </div>
+            <div>
+              <button
+                className={`homescreen-button ${textIndex === -9 && focusClass}`}
+                value="-9"
+                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
+              { textIndex === -9 &&
+                  <p className="button-tag">Sleep Mode</p>
+              }
+            </div>
+          </div>
         </div>
         <hr />
         <Footer/>
