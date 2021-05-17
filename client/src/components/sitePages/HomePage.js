@@ -17,17 +17,21 @@ import userClick from '../../assets/sounds/User.wav'
 import settingsClick from '../../assets/sounds/Settings.wav'
 import Footer from '../Footer'
 
-import linkPic from '../../assets/images/windlink.png'
+import codepenlogo from '../../assets/logos/codepen.png'
+import linkedinlogo from '../../assets/logos/linkedin.png'
+import githublogo from '../../assets/logos/github.png'
+
+
 import eShopPic from '../../assets/nintendo-icons/eshop.png'
-import albumPic from '../../assets/nintendo-icons/album.png'
-import githubSVG from '../../assets/svgs/github.svg'
+
+
 import albumSVG from '../../assets/svgs/album.svg'
 import controllerSVG from '../../assets/svgs/controller.svg'
 import powerSVG from '../../assets/svgs/power.svg'
 import settingsSVG from '../../assets/svgs/settings.svg'
 import allprojectsSVG from '../../assets/svgs/allprojects.svg'
 import newsSVG from '../../assets/svgs/news.svg'
-import linkedinSVG from '../../assets/svgs/linkedin.svg'
+
 const HomePage = () => {
   const [projectToModal, setProjectToModal] = useState('')
   const [isModalVisible, setIsModalVisible] = useState(false)
@@ -130,7 +134,7 @@ const HomePage = () => {
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
                 style={
                   {
-                    backgroundImage: `url(${hoverFocus === -3 ? githubSVG : nintendoOnline})`,
+                    backgroundImage: `url(${hoverFocus === -3 ? githublogo : nintendoOnline})`,
                   }}
               />
               { hoverFocus === -3 &&
@@ -144,7 +148,7 @@ const HomePage = () => {
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
                 style={
                   {
-                    backgroundImage: `url(${hoverFocus === -4 ? githubSVG : newsSVG})`,
+                    backgroundImage: `url(${hoverFocus === -4 ? linkedinlogo : newsSVG})`,
                   }}
               />
               { hoverFocus === -4 &&
@@ -170,7 +174,7 @@ const HomePage = () => {
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
                 style={
                   {
-                    backgroundImage: `url(${hoverFocus === -6 ? githubSVG : albumSVG})`,
+                    backgroundImage: `url(${hoverFocus === -6 ? codepenlogo : albumSVG})`,
                   }}
 
               />
