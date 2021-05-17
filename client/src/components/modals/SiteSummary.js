@@ -25,7 +25,7 @@ const SiteSummary = () => {
               If you would rather just see the information in one go, click the ‘About Me’ tab above for my skills and contact details.
             </p>
             <p>
-              The link to the repo for this site is here
+              The link to the repo for this site is <a href="https://github.com/JEdwardsK/jedwardsk.github.io">here</a>.
             </p>
             <p>
               Thanks for visiting my site!
@@ -46,7 +46,7 @@ const SiteSummary = () => {
               On the homescreen, substituting installed games, you can scroll through my most recent projects. Clicking on the project will open up a short summary of the project, its repo and deployed link, and links to any collaborators if I worked in a pair or team.
             </p>
             <p>
-              Clicking on all projects will direct to a view of all of the projects I have worked on, what I am currently working on, and any future projects or ideas I have (not yet, I’ve only got a few completed projects, which still need fixing, give me time!).
+              {'Clicking on all projects will direct to a view of all of the projects I have worked on, what I am currently working on, and any future projects or ideas I have (not yet, I\'ve only got a few completed projects, which still need fixing, give me time!).'}
             </p>
             <p>
               Hovering over the homescreen buttons may change the icons. Where icons change, these are links to the relevant sites. Listed below are the buttons with their associated links:
@@ -54,7 +54,7 @@ const SiteSummary = () => {
             <ul>
               <li>Nintendo Online - GitHub</li>
               <li>Nintendo eShop - LinkedIn</li>
-              <li>Album - CodePen (not yet! I haven’t started any pens yet)</li>
+              <li>{'Album - CodePen (not yet! I haven\'t started any pens yet)'}</li>
             </ul>
             <p>
               The B Button icon will navigate you back to your last viewed page, unless you are on the homepage, where it will disappear
@@ -76,7 +76,7 @@ const SiteSummary = () => {
             <h5>Profile</h5>
 
             <p>
-              Displays the profile tab, with a profile picture and username. The last played section has been replaced with what I’m currently learning.
+              {'Displays the profile tab, with a profile picture and username. The last played section has been replaced with what I\'m currently learning.'}
             </p>
             <p>
               The Play Activity has a list of the technologies that I have either used, or plan on using. The play record contextually notes my experience with them:
