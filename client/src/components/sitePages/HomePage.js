@@ -15,10 +15,11 @@ import SystemStatus from '../SystemStatus'
 import homeClick from '../../assets/sounds/Home.wav'
 import userClick from '../../assets/sounds/User.wav'
 import settingsClick from '../../assets/sounds/Settings.wav'
-import eshopSound from '../../assets/sounds/Eshop.wav'
+import eshopSound from '../../assets/sounds/Eshop Intro.wav'
 import openGameSound from '../../assets/sounds/Popup + Run Title.wav'
 import errorSound from '../../assets/sounds/Error.wav'
 import hoverClick from '../../assets/sounds/Nock.wav'
+import allProjectSound from '../../assets/sounds/Icons.wav'
 
 import Footer from '../Footer'
 
@@ -49,10 +50,11 @@ const HomePage = () => {
   const homeSound = new Audio(homeClick)
   const profileSound = new Audio(userClick)
   const settingsSound = new Audio(settingsClick)
-  const eshopSoundHover = new Audio(eshopSound)
+  const eshopSoundClick = new Audio(eshopSound)
   const projectClick = new Audio(openGameSound)
   const projectClose = new Audio(errorSound)
   const defaultHoverSound = new Audio(hoverClick)
+  const allProjectsClick = new Audio(allProjectSound)
 
   const history = useHistory()
   const focusClass = 'highlight'
@@ -68,11 +70,7 @@ const HomePage = () => {
   const handleMouseEnter = (event) => {
     const { value } = event.target
     const numValue = Number(value)
-    if (numValue === -5) {
-      eshopSoundHover.play()
-    } else {
-      defaultHoverSound.play()
-    }
+    defaultHoverSound.play()
     setHoverFocus(numValue)
   }
   const handleMouseExit = () => {
@@ -98,7 +96,10 @@ const HomePage = () => {
   }
 
   const handleToast = () => setIsToastVisible(false)
-
+  const eshopPlaySound = () => eshopSoundClick.play()
+  const handleAllProjects = () => {
+    allProjectsClick.play()
+  }
 
   return (
     <>
@@ -143,6 +144,7 @@ const HomePage = () => {
                 }
                 <button
                   className={`${hoverFocus === -10 && focusClass}`}
+                  onClick={handleAllProjects}
                   value="-10"
                   style={{ backgroundImage: `url(${allprojectsSVG})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}
                   onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
@@ -191,7 +193,8 @@ const HomePage = () => {
                 style={
                   { backgroundImage: `url(${eShopPic})` }
                 }
-                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
+                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+                onClick={eshopPlaySound}/>
               { hoverFocus === -5 &&
                 <p className="button-tag">Nintendo eShop</p>
               }

@@ -38,6 +38,7 @@ const SiteSummary = () => {
           <section id="key-info-contact">
             <h2>Contact Details</h2>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/jedwardsk/">JEdwardsK</a></p>
+            <p>GitHub: <a href="https://github.com/JEdwardsK">JEdwardsK</a></p>
           </section>
           <section id="navigation-homepage">
             <h2>HomePage</h2>
