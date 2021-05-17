@@ -1,9 +1,10 @@
 $brand-red: #e60012;
 $brand-grey: #414548;
-$hover-colour: rgb(0, 187, 187);
+$hover-colour: rgb(0, 226, 226);
 $layout: 2px solid red;
 $background-default: rgb(238, 238, 238);
 $background-lighter: whitesmoke;
+$divider: 2px solid lightgrey;
 @import "~bootstrap/scss/bootstrap";
 
 @font-face {
@@ -35,7 +36,6 @@ hr {
 
 #root{
   height: 800px;
-  border: 2px solid green;
 }
 //? LOCKSCREEN STYLING
 .lockscreen-container {
@@ -121,7 +121,6 @@ hr {
   height: 100%;
   .homescreen-header {
     display: flex;
-    border: $layout;
     height: 10%;
     margin: 20px 50px 10px 50px;
     justify-content: space-between;
@@ -130,9 +129,8 @@ hr {
       position: relative;
       display: flex;
       flex-direction: column;
-      border:$layout;
       .profile {
-        background-image: url('../assets/images/link.png');
+        background-image: url('../assets/images/windlink.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -156,7 +154,6 @@ hr {
   .homescreen-body {
     // background-color: thistle;
     // height: 70%;
-    border: $layout;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -184,10 +181,10 @@ hr {
           // margin: 0 25px 25px;
           width: 310px;
           background-color: transparent;
-          border: $layout;
+
           right: 6px;
           span {
-            font-size: 20px;
+            font-size: 25px;
             display: inline-block;
             background-color: transparent;
             // padding-left: 100%;
@@ -213,7 +210,7 @@ hr {
           background-size: cover;
         }
         .carousel-item.all-projects {
-          border: $layout;
+
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -242,7 +239,7 @@ hr {
     .homescreen-body-buttons {
       color: black;
       height: 200px;
-      border: $layout;
+
       display: flex;
       padding: 10px;
       justify-content: center;
@@ -256,6 +253,9 @@ hr {
           margin: 10px;
           height: 120px;
           width: 120px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
         }
         p {
           color: $hover-colour;
@@ -273,9 +273,10 @@ hr {
   }
 }
 
+
+
 //? DATE COMPONENT STYLING
-.date-container {
-  border: $layout;
+.date-container{
   z-index: 1;
   margin-right: 10px;
   right: 0;
@@ -306,8 +307,7 @@ hr {
   }
 }
 
-.profile-page-body, .settings-page-body {
-  border: $layout;
+.profile-page-body, .settings-page-body{
   height:640px;
   background-color: burlywood;
   position: relative;
@@ -329,6 +329,9 @@ hr {
       padding: 20px 0;
       padding-left: 10px;
     }
+    .profile-sidebar-headers:first{
+      border-bottom: $divider;
+    }
     // .profile-sidebar-headers::after{
     //   border: 2px solid orange;
     // }
@@ -339,29 +342,74 @@ hr {
     width: 100% * (2/3);
     left:25%;
     padding: 25px;
-    .profile-profile-tab {
-      background-color: blueviolet;
+  }
+
+  .profile-profile-tab {
       .my-info {
-        background-color: blue;
         display:flex;
-
-        .profile.pic {
-          width:33%;
-
+        .profile-pic {
+          width: 35%;
+          margin-right: 37px;
         }
         .my-info-right {
           flex:2;
-          background-color: red;
           display: flex;
           flex-direction: column;
+          h3 {
+            padding: 20px;
+            font-size: 47px;
+            border-top: $divider;
+            border-bottom: $divider;
+          }
           .current-play {
             display: flex;
+            border-bottom: $divider;
             .current-play-img {
               flex: 1;
               width: 100px;
             }
             .current-play-text {
               flex:4;
+              p:nth-child(1) {
+                color: forestgreen;
+              }
+
+            }
+
+          }
+        }
+      }
+      .play-activity {
+        margin-top: 70px;
+        .play-activity-header {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: $divider;
+          padding: 0 0 10px 10px;
+
+          h5 {
+            font-size: 20px;
+            border-left: 6px solid rgb(95, 95, 95);
+            padding-left: 10px;
+          }
+        }
+        .skills {
+          .play-container{
+            display: flex;
+            padding: 15px;
+            .logo-container{
+              width: 12.5%
+            }
+            .skill-description {
+              padding: 10px;
+              .skill-name{
+                flex: 1;
+                text-align: center;
+                justify-self: center;
+                font-size: 23px;
+                margin-bottom: 0;
+                text-align: left;
+              }
             }
           }
         }
@@ -369,14 +417,10 @@ hr {
     }
   }
 
-}
 .settings-main:first-child{
   overflow: auto;
 }
-.play-activity-header {
-  display: flex;
-  justify-content: space-around;
-}
+
 
 //? SKILLS STYLING
 .team-member {
@@ -396,29 +440,8 @@ hr {
 
 }
 
-.skills {
-  .play-container{
-    display: flex;
-  .skill{
-    flex: 0 0 20%;
-    display: flex;
-    width: 6rem;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    .skill-description {
-      display: flex;
-    }
-    .skill-name{
-      flex: 1;
-      text-align: center;
-      justify-self: center;
-    }
-  }
-}
 
-}
+//? MODAL SKILLS
 .skills-container{
   display: flex;
   flex-direction: row;
@@ -494,4 +517,9 @@ hr {
 //   100% {
 //     color: cyan;
 //   }
+
+
+
+
+
 

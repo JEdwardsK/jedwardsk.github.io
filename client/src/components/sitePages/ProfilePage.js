@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Footer from '../Footer'
 
 
-import linkPic from '../../assets/images/link.png'
+import linkPic from '../../assets/images/windlink.png'
 
 import ProfileTab from '../profileTabs/ProfileTab'
 import FriendsTab from '../profileTabs/FriendsTab'
@@ -57,6 +57,7 @@ const ProfilePage = () => {
 
                       color: `${hoverFocus === index ? 'blue' : ''}`,
                       backgroundColor: `${hoverFocus === index ? 'white' : 'transparent'}`,
+                      borderBottom: `${index === 0 || index === 5 ? '2px solid lightgrey' : ''}`,
                       // borderLeft: `${hoverFocus === index ? '5px solid blue' : '5px solid transparent'}`,
                     }
                   }

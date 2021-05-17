@@ -17,9 +17,16 @@ import userClick from '../../assets/sounds/User.wav'
 import settingsClick from '../../assets/sounds/Settings.wav'
 import Footer from '../Footer'
 
-import linkPic from '../../assets/images/link.png'
+import linkPic from '../../assets/images/windlink.png'
 import eShopPic from '../../assets/nintendo-icons/eshop.png'
+import albumPic from '../../assets/nintendo-icons/album.png'
 import githubSVG from '../../assets/svgs/github.svg'
+import albumSVG from '../../assets/svgs/album.svg'
+import controllerSVG from '../../assets/svgs/controller.svg'
+import powerSVG from '../../assets/svgs/power.svg'
+import settingsSVG from '../../assets/svgs/settings.svg'
+import allprojectsSVG from '../../assets/svgs/allprojects.svg'
+import newsSVG from '../../assets/svgs/news.svg'
 import linkedinSVG from '../../assets/svgs/linkedin.svg'
 const HomePage = () => {
   const [projectToModal, setProjectToModal] = useState('')
@@ -99,6 +106,7 @@ const HomePage = () => {
             }
             <div className="carousel-item-container">
               <div
+                style={{ border: 'none' }}
                 className="carousel-item all-projects"
               >
                 { hoverFocus === -10 &&
@@ -107,6 +115,7 @@ const HomePage = () => {
                 <button
                   className={`${hoverFocus === -10 && focusClass}`}
                   value="-10"
+                  style={{ backgroundImage: `url(${allprojectsSVG})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}
                   onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
                 />
               </div>
@@ -133,6 +142,10 @@ const HomePage = () => {
                 className={`homescreen-button ${hoverFocus === -4 && focusClass}`}
                 value="-4"
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+                style={
+                  {
+                    backgroundImage: `url(${hoverFocus === -4 ? githubSVG : newsSVG})`,
+                  }}
               />
               { hoverFocus === -4 &&
                 <p className="button-tag">LinkedIn</p>
@@ -143,7 +156,7 @@ const HomePage = () => {
                 className={`homescreen-button ${hoverFocus === -5 && focusClass}`}
                 value="-5"
                 style={
-                  { backgroundImage: eShopPic }
+                  { backgroundImage: `url(${eShopPic})` }
                 }
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
               { hoverFocus === -5 &&
@@ -154,7 +167,13 @@ const HomePage = () => {
               <button
                 className={`homescreen-button ${hoverFocus === -6 && focusClass}`}
                 value="-6"
-                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
+                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+                style={
+                  {
+                    backgroundImage: `url(${hoverFocus === -6 ? githubSVG : albumSVG})`,
+                  }}
+
+              />
               { hoverFocus === -6 &&
                 <p className="button-tag">Codepen</p>
               }
@@ -163,6 +182,9 @@ const HomePage = () => {
               <button
                 className={`homescreen-button ${hoverFocus === -7 && focusClass}`}
                 value="-7"
+                style={
+                  { backgroundImage: `url(${controllerSVG})` }
+                }
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
               { hoverFocus === -7 &&
                 <p className="button-tag">Controllers</p>
@@ -173,6 +195,9 @@ const HomePage = () => {
                 name="settings" onClick={handlePageChange}
                 className={`homescreen-button ${hoverFocus === -8 && focusClass}`}
                 value="-8"
+                style={
+                  { backgroundImage: `url(${settingsSVG})` }
+                }
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
               { hoverFocus === -8 &&
                   <p className="button-tag">Settings</p>
@@ -182,6 +207,9 @@ const HomePage = () => {
               <button
                 className={`homescreen-button ${hoverFocus === -9 && focusClass}`}
                 value="-9"
+                style={
+                  { backgroundImage: `url(${powerSVG})` }
+                }
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
               { hoverFocus === -9 &&
                   <p className="button-tag">Sleep Mode</p>

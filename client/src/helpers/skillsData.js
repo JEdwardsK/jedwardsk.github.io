@@ -31,7 +31,7 @@ import typescriptLogo from '../assets/logos/typescript.png'
   const javaScript = new Skill('Javascript', faJsSquare, null, 20)
   const html = new Skill('HTML', faHtml5, null, 20)
   const css = new Skill('CSS', faCss3,null, 20)
-  const react = new Skill('React (Hooks)', faReact, 20)
+  const react = new Skill('React (Hooks)', faReact, null, 20)
   const nodeJs = new Skill('Nodejs', faNodeJs, null, 20)
   const express = new Skill('Express', null, expressLogo, 20)
   const insomnia = new Skill('Insomnia', null,insomniaLogo, 20 )

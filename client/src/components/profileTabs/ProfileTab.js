@@ -5,7 +5,7 @@ import OverlayTrigger from 'react-bootstrap/esm/OverlayTrigger'
 import Tooltip from 'react-bootstrap/esm/Tooltip'
 import { allSkills, skillHighlight } from '../../helpers/skillsData'
 
-import linkPic from '../../assets/images/link.png'
+import linkPic from '../../assets/images/windlink.png'
 import SkillsModal from '../modals/SkillsModal'
 
 const ProfileTab = () => {
@@ -24,7 +24,14 @@ const ProfileTab = () => {
         <div className="my-info-right">
           <h3>JEdwardsK</h3>
           <div className="current-play">
-            <div styles={{ backgroundImage: `url(${skillHighlight.altImage})` }} className="current-play-img" />
+
+            <div className="current-play-img">
+              { !skillHighlight.icon ?
+                <img className="play-logo" src={skillHighlight.altImage} alt={`logo for ${name}`} width="100"/>
+                :
+                <FontAwesomeIcon className="play-logo" icon={skillHighlight.icon} size="5x" />
+              }
+            </div>
             <div className="current-play-text">
               <p>Online</p>
               <p>Typescript</p>
@@ -35,10 +42,10 @@ const ProfileTab = () => {
       <div className="play-activity">
         <div className="play-activity-header">
           <h5>Play Activity</h5>
-          <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">
+          <OverlayTrigger overlay={<Tooltip>
                     Click to see my skills!</Tooltip>}>
             <span className="d-inline-block">
-              <FontAwesomeIcon icon={faQuestionCircle} onClick={handleModal} />
+              <FontAwesomeIcon icon={faQuestionCircle} size="2x" onClick={handleModal} />
             </span>
           </OverlayTrigger>
         </div>
@@ -48,14 +55,16 @@ const ProfileTab = () => {
               const { name, icon, altImage, experience } = skill
               return (
                 <div className="play-container" key={index}>
-                  { !icon ?
-                    <img className="play-logo" src={altImage} alt={`logo for ${name}`} width="60" />
-                    :
-                    <FontAwesomeIcon className="skill-logo" icon={icon} size="5x" />
-                  }
+                  <div className="logo-container">
+                    { !icon ?
+                      <img className="play-logo" src={altImage} alt={`logo for ${name}`} width="100"/>
+                      :
+                      <FontAwesomeIcon className="play-logo" icon={icon} size="5x" />
+                    }
+                  </div>
                   <div className="skill-description">
                     <p className="skill-name">{name}</p>
-                    <p>{experience}</p>
+                    <p style= {{ color: 'blue' }}>{experience}</p>
                   </div>
                 </div>
               )
