@@ -301,9 +301,14 @@ hr {
 
 .profile-header {
   display: flex;
+  align-items: center;
+  padding: 15px 0 15px 30px;
   img {
     border-radius: 50%;
-    width: 100px;
+    width: 80px;
+  }
+  h4 {
+    margin-left: 15px;
   }
 }
 

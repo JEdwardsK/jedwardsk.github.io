@@ -40,7 +40,7 @@ const ProfilePage = () => {
       <div className="profile-page-container">
         <div className="profile-header header">
           <img src={linkPic} alt="profile avatar" />
-          <h4>JEdwardsKs Page</h4>
+          <h4>{'JEdwardsK\'s Page'}</h4>
         </div>
         <div className="profile-page-body body">
           <div className="profile-sidebar">
