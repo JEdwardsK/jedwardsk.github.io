@@ -34,7 +34,7 @@ const ProfileTab = () => {
             </div>
             <div className="current-play-text">
               <p>Online</p>
-              <p>Typescript</p>
+              <p>Currently playing {skillHighlight.name}</p>
             </div>
           </div>
         </div>

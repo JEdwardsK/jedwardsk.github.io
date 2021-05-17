@@ -22,13 +22,14 @@ import typescriptLogo from '../assets/logos/typescript.png'
     this.icon = icon
     this.altImage = altImage
     this.experience =
-      time < 0 ? 'Game not in system'
-        : time === 0 ? 'Game Installed'
-          : (time > 0 && time <= 20) ? 'Played for a little while'
+      time < 0 ? 'Game on wishlist'
+      : time === 0 ? 'Game Installed'
+        : (time > 0 && time <= 10) ? 'Just started playing'
+          : (time > 10 && time <= 20) ? 'Played for a little while'
             : `Played for ${time} hours`
   }
 }
-  const javaScript = new Skill('Javascript', faJsSquare, null, 20)
+  const javaScript = new Skill('JavaScript', faJsSquare, null, 20)
   const html = new Skill('HTML', faHtml5, null, 20)
   const css = new Skill('CSS', faCss3,null, 20)
   const react = new Skill('React (Hooks)', faReact, null, 20)
@@ -42,11 +43,11 @@ import typescriptLogo from '../assets/logos/typescript.png'
   const python = new Skill('Python', faPython, null, 20)
   const postgresql = new Skill('PostgreSQL', null, postgresqlLogo, 10)
   const tablePlus = new Skill('TablePlus', null, tableplusLogo, 10)
-  const mongodb = new Skill('MongoDB', null, mongodbLogo, 10)
+  const mongodb = new Skill('MongoDB', null, mongodbLogo, 20)
   const django = new Skill('Django', null, djangoLogo, 20)
-  const sCSS = new Skill('SCSS', faSass, null, 10)
-  const bulma = new Skill('Bulma', null, bulmaLogo, 10)
-  const bootstrap = new Skill('Bootstrap', faBootstrap, null, 10)
+  const sCSS = new Skill('SCSS', faSass, null, 20)
+  const bulma = new Skill('Bulma', null, bulmaLogo, 20)
+  const bootstrap = new Skill('Bootstrap', faBootstrap, null, 20)
   const typescript = new Skill('TypeScript', null, typescriptLogo, 0)
   const aWS = new Skill('AWS', faAws, null, -1)
   const reactNative = new Skill('React Native', faReact, null, -1)

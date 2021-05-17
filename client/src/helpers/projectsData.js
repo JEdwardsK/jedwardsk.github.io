@@ -2,24 +2,30 @@ import pubImage from '../assets/project-images/pubHub.png'
 import bookImage from '../assets/project-images/bookFinder.png'
 import spaceImage from '../assets/project-images/spaceInvaders.png'
 import greekImage from '../assets/project-images/pantheon.png'
+import luigiPic from '../assets/images/luigi.png'
+import princessPic from '../assets/images/princess.png'
+import splatoonSplashPic from '../assets/images/splatoonsplash.png'
+import bowserPic from '../assets/images/bowser.png'
+import casualMarioPic from '../assets/images/casualMario.png'
 class Collaborator {
-  constructor(name, github, linkedIn) {
+  constructor(name, github, linkedIn, profilePic) {
     this.name = name
     this.github = github
     this.linkedIn = linkedIn
+    this.profilePic = profilePic
   }
 }
 
 //#region collaborators
-const atillaArslan = new Collaborator('Atilla Arslan', 'https://github.com/Atilla-Arslan', 'https://www.linkedin.com/in/atilla-arslan7/')
+const atillaArslan = new Collaborator('Atilla Arslan', 'https://github.com/Atilla-Arslan', 'https://www.linkedin.com/in/atilla-arslan7/', princessPic)
 
-const samiHakim = new Collaborator('Sami Hakim', 'https://www.linkedin.com/in/samihakim/', 'https://github.com/Hamisakim')
+const samiHakim = new Collaborator('Sami Hakim', 'https://www.linkedin.com/in/samihakim/', 'https://github.com/Hamisakim', splatoonSplashPic)
 
-const oliviaFlynn = new Collaborator('Olivia Flynn', 'http://github.com/oliviafpersonal', 'http://bit.ly/oliviaflynn')
+const oliviaFlynn = new Collaborator('Olivia Flynn', 'http://github.com/oliviafpersonal', 'http://bit.ly/oliviaflynn', casualMarioPic)
 
-const harryWarwick = new Collaborator('Harry Warwick', 'http://github.com/hfrwarwick', 'http://linkedin.com/in/harrywarwick')
+const harryWarwick = new Collaborator('Harry Warwick', 'http://github.com/hfrwarwick', 'http://linkedin.com/in/harrywarwick', bowserPic)
 
-const georgeShaw = new Collaborator('George Shaw', ' ', 'https://www.linkedin.com/in/georgeshaw1998')
+const georgeShaw = new Collaborator('George Shaw', ' ', 'https://www.linkedin.com/in/georgeshaw1998', luigiPic)
 
 //#endregion
 class Project {
@@ -87,3 +93,11 @@ export const projects = [
   spaceInvaders
 ]
 //#region
+
+export const collaborators = [
+  samiHakim,
+  atillaArslan,
+  oliviaFlynn,
+  harryWarwick,
+  georgeShaw
+]
