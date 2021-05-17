@@ -115,6 +115,12 @@ const SiteSummary = () => {
               User settings is a tab for fluff. Changing profile picture perhaps, but most likely just for appearance, with no functionality
             </p>
           </section>
+          <section id="navigation-settings">
+            <h2>Settings</h2>
+            <p>
+              All of settings is currently WIP. None have functionality and was an exercise in styling
+            </p>
+          </section>
         </Card.Text>
       </Card.Body>
     </Card>

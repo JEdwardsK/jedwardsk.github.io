@@ -569,6 +569,29 @@ hr {
     margin: 6px;
   }
 
+.toast-profile {
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
 
+.toast {
+  position: absolute;
+  top: 0;
+  right: 28px;
+  z-index: 2;
+}
+
+.toast-header {
+  justify-content: space-between;
+}
+
+
+.toast-text-header {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  justify-content: center;
+}
 
 

@@ -4,6 +4,7 @@ import { useHistory } from 'react-router'
 
 import  Modal  from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import Toast from 'react-bootstrap/Toast'
 
 import { projects } from '../../helpers/projectsData'
 
@@ -23,6 +24,8 @@ import githublogo from '../../assets/logos/github.png'
 
 
 import eShopPic from '../../assets/nintendo-icons/eshop.png'
+import linkPic from '../../assets/images/windlink.png'
+
 
 
 import albumSVG from '../../assets/svgs/album.svg'
@@ -35,6 +38,7 @@ import newsSVG from '../../assets/svgs/news.svg'
 const HomePage = () => {
   const [projectToModal, setProjectToModal] = useState('')
   const [isModalVisible, setIsModalVisible] = useState(false)
+  const [isToastVisible, setIsToastVisible] = useState(true)
   const [hoverFocus, setHoverFocus] = useState(-1)
 
   const homeSound = new Audio(homeClick)
@@ -75,6 +79,10 @@ const HomePage = () => {
     }
   }
   const handleCloseModal = () => setIsModalVisible(false)
+
+  const handleToast = () => setIsToastVisible(false)
+
+
   return (
     <>
       <div className="homescreen-container">
@@ -221,11 +229,29 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <Footer/>
-        {/* <div className="homescreen-footer">
-          <div className="placeholder-switch"></div>
-          <div className="ok-button-container"><button className="a-button"></button></div>
-        </div> */}
+        <Footer />
+
+        <Toast
+          delay={5000}
+          autohide
+          show={isToastVisible}
+          onClose={handleToast}>
+          <Toast.Header>
+            <div style={{ display: 'flex' }}>
+              <img
+                src={linkPic}
+                className="toast-profile animate__animated animate__slideInLeft"
+                alt="profile icon"
+              />
+              <div className="toast-text-header">
+                <strong className="mr-auto">JEdwardsK</strong>
+                <small>Just now</small>
+              </div>
+            </div>
+          </Toast.Header>
+          <Toast.Body>Hi! Click the switch icon at the bottom left of the screen for some info on site navigation!</Toast.Body>
+        </Toast>
+
         <Modal
           show={isModalVisible}
           onHide={handleCloseModal}

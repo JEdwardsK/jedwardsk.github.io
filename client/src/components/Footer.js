@@ -7,8 +7,11 @@ import { useHistory, useLocation } from 'react-router-dom'
 import aButton from '../assets/nintendo-icons/a-button.png'
 import bButton from '../assets/nintendo-icons/b-button.png'
 import SiteSummary from './modals/SiteSummary'
+
+
 const Footer = () => {
   const [isModalVisible, setIsModalVisible] = useState(false)
+
 
   const location = useLocation()
   const history = useHistory()
@@ -21,6 +24,8 @@ const Footer = () => {
     setIsModalVisible(!isModalVisible)
   }
 
+
+
   return (
     <>
       <Modal
@@ -31,7 +36,7 @@ const Footer = () => {
         size="lg"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Site Navigation</Modal.Title>
         </Modal.Header>
         <Nav variant="tabs" defaultActiveKey="#first">
           <Nav.Item>
@@ -82,7 +87,6 @@ const Footer = () => {
           </button>
         </div>
       </div>
-
     </>
   )
 }

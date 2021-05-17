@@ -23,12 +23,22 @@ const SettingsPage = () => {
   const sidebarHeaders = ['Support', 'Flight Mode', 'Screen Brightness', 'Screen Lock', 'Parental Controls', 'Internet', 'Data Management', 'User', 'Mii', 'amibo', 'Themes', 'Notifications', 'Sleep Mode', 'Controllers and Sensors', 'TV Output', 'System']
 
   const [tabVisible, setTabVisible] = useState(0)
+  const [hoverFocus, setHoverFocus] = useState(-1)
 
   const handleTabToggle = (event) => {
     const { value } = event.target
     const input = parseInt(value)
     setTabVisible(input)
   }
+
+  const handleMouseEnter = (event) => {
+    const { value } = event.target
+    setHoverFocus(Number(value))
+  }
+  const handleMouseExit = () => {
+    setHoverFocus(-1)
+  }
+
   return (
     <div className="settings-page-container">
       <div className="settings-page-header header">
@@ -40,16 +50,27 @@ const SettingsPage = () => {
           {sidebarHeaders.map((header, index) => {
             return (
               <button
-                className="settings-sidebar-headers"
+                className={`profile-sidebar-headers ${hoverFocus === index && 'highlight'}`}
                 key={index}
                 value={index}
-                onClick={handleTabToggle}>
+                onClick={handleTabToggle}
+                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+                style={
+                  {
+
+                    color: `${hoverFocus === index ? 'blue' : ''}`,
+                    backgroundColor: `${hoverFocus === index ? 'white' : 'transparent'}`,
+                    borderBottom: `${index === 0 || index === 5 ? '2px solid lightgrey' : ''}`,
+                    // borderLeft: `${hoverFocus === index ? '5px solid blue' : '5px solid transparent'}`,
+                  }
+                }
+              >
                 {header}
               </button>
             )
           })}
         </div>
-        <div className="settings-page-main">
+        <div className="profile-main">
           {
             tabVisible === 0 ?
               <SupportTab /> :
