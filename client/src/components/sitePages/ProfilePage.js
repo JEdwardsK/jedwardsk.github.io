@@ -42,6 +42,7 @@ const ProfilePage = () => {
           <img src={linkPic} alt="profile avatar" />
           <h4>{'JEdwardsK\'s Page'}</h4>
         </div>
+        <hr />
         <div className="profile-page-body body">
           <div className="profile-sidebar">
             {sidebarHeaders.map((header, index) => {

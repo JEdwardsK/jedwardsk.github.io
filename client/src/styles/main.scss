@@ -15,7 +15,8 @@ $divider: 2px solid lightgrey;
 }
 hr {
   border: 2px solid black;
-  margin: 0 2%
+  margin: 0 2%;
+  margin-bottom: 10px;
 }
 * {
   font-family:'A-OTF Shin Go Pro R';
@@ -280,8 +281,9 @@ hr {
   z-index: 1;
   margin-right: 10px;
   right: 0;
-  width:200px;
+  width:230px;
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
   p {
   margin: 0;
@@ -297,6 +299,15 @@ hr {
 .profile-page-container {
   display: flex;
   flex-direction: column;
+
+  .footer {
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+
 }
 
 .profile-header {
@@ -314,6 +325,7 @@ hr {
 
 .profile-page-body, .settings-page-body{
   height:640px;
+  overflow: scroll;
   background-color: burlywood;
   position: relative;
   display: flex;
@@ -474,19 +486,41 @@ hr {
 .footer-container {
     display: flex;
     height: 10%;
-    background-color: blue;
-    .placeholder-switch {
+    justify-content: space-between;
+    padding: 0 55px;
 
+    .footer-switch {
+      background-image: url('../assets/nintendo-icons/switch.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: none;
+      border: none;
+      width: 80px;
     }
-    .ok-button-container {
-      button {
+    .controller-buttons-container {
+      display: flex;
+    }
+    .footer-button {
+      display: flex;
+      height: 48px;
+      margin-top: 15px;
+      align-items: center;
+      border: none;
+      background-color: transparent;
 
+      .footer-button-image {
+        height: 100%;
       }
       p {
+        margin:0;
+        font-size: 30px;
 
       }
     }
   }
+
+
 
 @keyframes text-scroll {
   0% {

@@ -221,7 +221,6 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <hr />
         <Footer/>
         {/* <div className="homescreen-footer">
           <div className="placeholder-switch"></div>
