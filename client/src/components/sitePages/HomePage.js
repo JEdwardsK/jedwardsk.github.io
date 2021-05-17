@@ -58,19 +58,19 @@ const HomePage = () => {
 
   const history = useHistory()
   const focusClass = 'highlight'
-  useEffect(() => homeSound.play(), [])
+  useEffect(() => homeSound.play().catch((error) => console.warn('unable to play sound', error)), [])
 
   const handleProjectModal = (event) => {
     const { name } = event.target
     setProjectToModal(name)
-    projectClick.play()
+    projectClick.play().catch((error) => console.warn('unable to play sound', error))
     setIsModalVisible(true)
   }
 
   const handleMouseEnter = (event) => {
     const { value } = event.target
     const numValue = Number(value)
-    defaultHoverSound.play()
+    defaultHoverSound.play().catch((error) => console.warn('unable to play sound', error))
     setHoverFocus(numValue)
   }
   const handleMouseExit = () => {
@@ -83,22 +83,22 @@ const HomePage = () => {
   const handlePageChange = (event) => {
     const { name } = event.target
     if (name === 'profile') {
-      profileSound.play()
+      profileSound.play().catch((error) => console.warn('unable to play sound', error))
       history.push('/profile')
     } else if (name === 'settings') {
-      settingsSound.play()
+      settingsSound.play().catch((error) => console.warn('unable to play sound', error))
       history.push('/settings')
     }
   }
   const handleCloseModal = () => {
-    projectClose.play()
+    projectClose.play().catch((error) => console.warn('unable to play sound', error))
     setIsModalVisible(false)
   }
 
   const handleToast = () => setIsToastVisible(false)
-  const eshopPlaySound = () => eshopSoundClick.play()
+  const eshopPlaySound = () => eshopSoundClick.play().catch((error) => console.warn('unable to play sound', error))
   const handleAllProjects = () => {
-    allProjectsClick.play()
+    allProjectsClick.play().catch((error) => console.warn('unable to play sound', error))
   }
 
   return (

@@ -32,8 +32,8 @@ const Footer = () => {
 
   const handleModal = () => {
     setIsModalVisible(!isModalVisible)
-    !isModalVisible ? defaultClickSound.play()
-      : projectClose.play()
+    !isModalVisible ? defaultClickSound.play().catch((error) => console.warn('unable to play sound', error))
+      : projectClose.play().catch((error) => console.warn('unable to play sound', error))
   }
 
 

@@ -30,7 +30,7 @@ const LockScreen = () => {
         document.removeEventListener('keyup', handleKeyPress)
         history.push('/home')
       } else if (featuredCounter === 4) {
-        featuredSound.play()
+        featuredSound.play().catch((error) => console.warn('unable to play sound', error))
         document.removeEventListener('keydown', handleKeyPress)
         history.push('/featured')
         return
@@ -59,13 +59,13 @@ const LockScreen = () => {
     console.log(key + keyCode)
     if (keyCode === 65) {
       if (featuredCounter !== 0) {
-        failClick.play()
+        failClick.play().catch((error) => console.warn('unable to play sound', error))
         setSidebarWidth('25%')
         setMainWidth('75%')
         setFeaturedCounter(0)
         setContinueCounter(0)
       } else {
-        defaultClickSound.play()
+        defaultClickSound.play().catch((error) => console.warn('unable to play sound', error))
         let newACount = continueCounter
         newACount++
         setContinueCounter(newACount)
@@ -78,7 +78,7 @@ const LockScreen = () => {
       setContinueCounter(0)
       setFeaturedCounter(newYCount)
     } else {
-      failClick.play()
+      failClick.play().catch((error) => console.warn('unable to play sound', error))
       setContinueCounter(0)
       setFeaturedCounter(0)
       setSidebarWidth('25%')
