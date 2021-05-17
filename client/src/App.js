@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import LockScreen from './components/LockScreen'
+// import LockScreen from './components/LockScreen'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import FeaturedPage from './components/sitePages/FeaturedPage'
@@ -23,12 +23,12 @@ const App = () => {
         <Route path="/featured">
           <FeaturedPage/>
         </Route>
-        <Route path="/home">
+        <Route path="/">
           <HomePage />
         </Route>
-        <Route path="/">
+        {/* <Route path="/">
           <LockScreen />
-        </Route>
+        </Route> */}
       </Switch>
 
     </BrowserRouter>

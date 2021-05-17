@@ -570,9 +570,11 @@ hr {
   }
 
 .toast-profile {
+
   width: 50px;
   border-radius: 50%;
   border: 3px solid white;
+  background-color: white;
 }
 
 .toast {
@@ -584,6 +586,8 @@ hr {
 
 .toast-header {
   justify-content: space-between;
+  background-color: $background-default;
+
 }
 
 
@@ -593,5 +597,6 @@ hr {
   margin-left: 8px;
   justify-content: center;
 }
+
 
 

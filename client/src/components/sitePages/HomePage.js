@@ -13,10 +13,15 @@ import SystemStatus from '../SystemStatus'
 
 
 import homeClick from '../../assets/sounds/Home.wav'
-import defaultClick from '../../assets/sounds/Enter & Back.wav'
 import userClick from '../../assets/sounds/User.wav'
 import settingsClick from '../../assets/sounds/Settings.wav'
+import eshopSound from '../../assets/sounds/Eshop.wav'
+import openGameSound from '../../assets/sounds/Popup + Run Title.wav'
+import errorSound from '../../assets/sounds/Error.wav'
+import hoverClick from '../../assets/sounds/Nock.wav'
+
 import Footer from '../Footer'
+
 
 import codepenlogo from '../../assets/logos/codepen.png'
 import linkedinlogo from '../../assets/logos/linkedin.png'
@@ -42,9 +47,12 @@ const HomePage = () => {
   const [hoverFocus, setHoverFocus] = useState(-1)
 
   const homeSound = new Audio(homeClick)
-  const defaultClickSound = new Audio(defaultClick)
   const profileSound = new Audio(userClick)
   const settingsSound = new Audio(settingsClick)
+  const eshopSoundHover = new Audio(eshopSound)
+  const projectClick = new Audio(openGameSound)
+  const projectClose = new Audio(errorSound)
+  const defaultHoverSound = new Audio(hoverClick)
 
   const history = useHistory()
   const focusClass = 'highlight'
@@ -53,13 +61,19 @@ const HomePage = () => {
   const handleProjectModal = (event) => {
     const { name } = event.target
     setProjectToModal(name)
-    defaultClickSound.play()
+    projectClick.play()
     setIsModalVisible(true)
   }
 
   const handleMouseEnter = (event) => {
     const { value } = event.target
-    setHoverFocus(Number(value))
+    const numValue = Number(value)
+    if (numValue === -5) {
+      eshopSoundHover.play()
+    } else {
+      defaultHoverSound.play()
+    }
+    setHoverFocus(numValue)
   }
   const handleMouseExit = () => {
     setHoverFocus(-1)
@@ -78,7 +92,10 @@ const HomePage = () => {
       history.push('/settings')
     }
   }
-  const handleCloseModal = () => setIsModalVisible(false)
+  const handleCloseModal = () => {
+    projectClose.play()
+    setIsModalVisible(false)
+  }
 
   const handleToast = () => setIsToastVisible(false)
 
@@ -136,29 +153,33 @@ const HomePage = () => {
           <div className="homescreen-body-buttons">
 
             <div>
-              <button
-                className={`homescreen-button ${hoverFocus === -3 && focusClass}`}
-                value="-3"
-                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
-                style={
-                  {
-                    backgroundImage: `url(${hoverFocus === -3 ? githublogo : nintendoOnline})`,
-                  }}
-              />
+              <a href="https://github.com/JEdwardsK">
+                <button
+                  className={`homescreen-button ${hoverFocus === -3 && focusClass}`}
+                  value="-3"
+                  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+                  style={
+                    {
+                      backgroundImage: `url(${hoverFocus === -3 ? githublogo : nintendoOnline})`,
+                    }}
+                />
+              </a>
               { hoverFocus === -3 &&
                 <p className="button-tag">GitHub</p>
               }
             </div>
             <div>
-              <button
-                className={`homescreen-button ${hoverFocus === -4 && focusClass}`}
-                value="-4"
-                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
-                style={
-                  {
-                    backgroundImage: `url(${hoverFocus === -4 ? linkedinlogo : newsSVG})`,
-                  }}
-              />
+              <a href="https://www.linkedin.com/in/jedwardsk/">
+                <button
+                  className={`homescreen-button ${hoverFocus === -4 && focusClass}`}
+                  value="-4"
+                  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
+                  style={
+                    {
+                      backgroundImage: `url(${hoverFocus === -4 ? linkedinlogo : newsSVG})`,
+                    }}
+                />
+              </a>
               { hoverFocus === -4 &&
                 <p className="button-tag">LinkedIn</p>
               }
@@ -235,12 +256,14 @@ const HomePage = () => {
           delay={5000}
           autohide
           show={isToastVisible}
-          onClose={handleToast}>
+          onClose={handleToast}
+          className="animate__animated animate__slideInLeft"
+        >
           <Toast.Header>
             <div style={{ display: 'flex' }}>
               <img
                 src={linkPic}
-                className="toast-profile animate__animated animate__slideInLeft"
+                className="toast-profile"
                 alt="profile icon"
               />
               <div className="toast-text-header">
@@ -249,7 +272,7 @@ const HomePage = () => {
               </div>
             </div>
           </Toast.Header>
-          <Toast.Body>Hi! Click the switch icon at the bottom left of the screen for some info on site navigation!</Toast.Body>
+          <Toast.Body styles={{ color: '#6c757d' }}>Hi! Click the switch icon at the bottom left of the screen for some info on site navigation!</Toast.Body>
         </Toast>
 
         <Modal

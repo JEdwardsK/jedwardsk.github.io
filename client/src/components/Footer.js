@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
+// import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+// import Tooltip from 'react-bootstrap/Tooltip'
 import Button from 'react-bootstrap/Button'
 import Nav from 'react-bootstrap/esm/Nav'
 import Modal from 'react-bootstrap/Modal'
@@ -8,13 +10,21 @@ import aButton from '../assets/nintendo-icons/a-button.png'
 import bButton from '../assets/nintendo-icons/b-button.png'
 import SiteSummary from './modals/SiteSummary'
 
+import defaultClick from './../assets/sounds/Enter & Back.wav'
+import errorSound from './../assets/sounds/Error.wav'
+
+
 
 const Footer = () => {
   const [isModalVisible, setIsModalVisible] = useState(false)
 
+  const defaultClickSound = new Audio(defaultClick)
+  const projectClose = new Audio(errorSound)
+
 
   const location = useLocation()
   const history = useHistory()
+  console.log(location.pathname)
 
   const handlegoBack = () => {
     history.goBack()
@@ -22,6 +32,8 @@ const Footer = () => {
 
   const handleModal = () => {
     setIsModalVisible(!isModalVisible)
+    !isModalVisible ? defaultClickSound.play()
+      : projectClose.play()
   }
 
 
@@ -72,9 +84,14 @@ const Footer = () => {
       </Modal>
       <hr />
       <div className="footer-container footer">
+        {/* <OverlayTrigger overlay={<Tooltip>
+                    Click for info on site navigation!</Tooltip>}>
+          <span> */}
         <button onClick={handleModal} className="footer-switch"/>
+        {/* </span>
+        </OverlayTrigger> */}
         <div className="controller-buttons-container">
-          { location.pathname !== '/home' &&
+          { location.pathname !== '/' &&
               <button onClick={handlegoBack} className="footer-button">
                 <img className="footer-button-image"
                   src={bButton} alt="b-button" />
