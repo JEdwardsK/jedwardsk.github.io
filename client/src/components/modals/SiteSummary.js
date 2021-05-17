@@ -90,6 +90,30 @@ const SiteSummary = () => {
             <p>
               Hovering over the question mark will highlight ‘click to view my skills’. Doing so will open up a modal displaying a breakdown of what technologies I have used, which I am currently expanding my knowledge on and which am looking learn in the future.
             </p>
+            <h5>Friends</h5>
+            <p>
+              The Friends tab is an index of each person I have worked with on any projects. The links to their GitHub and LinkedIn pages are with the relevant project.
+            </p>
+            <h5>Works In Progress</h5>
+            <p>
+              The remaining tabs do not yet have functionality but will hopefully have some in the future. Listed below are speculative functions or ideas.
+            </p>
+
+            <p>
+              The Trending with Friends Tab is a tab that notes any particular interesting bits of info I have come across recently
+
+            </p>
+            <p>
+              The Online play suggestions could be a tab to allow requests for coding projects
+
+            </p>
+            <p>
+              The Friends Suggestions tab allows site visitors to post a message recommending a particular technology, or resource for me to learn or explore
+
+            </p>
+            <p>
+              User settings is a tab for fluff. Changing profile picture perhaps, but most likely just for appearance, with no functionality
+            </p>
           </section>
         </Card.Text>
       </Card.Body>
