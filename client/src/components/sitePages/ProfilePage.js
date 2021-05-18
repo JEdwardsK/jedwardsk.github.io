@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import React, { useState } from 'react'
 
@@ -13,6 +14,7 @@ import OnlinePlayTab from '../profileTabs/OnlinePlayTab'
 import UserSettingsTab from '../profileTabs/UserSettingsTab'
 import AddFriendTab from '../profileTabs/AddFriendTab'
 import FriendSuggestionsTab from '../profileTabs/FriendSuggestionsTab'
+import WIPTab from '../profileTabs/WIPTab'
 
 const ProfilePage = () => {
 
@@ -83,7 +85,7 @@ const ProfilePage = () => {
                         <AddFriendTab />
                         : tabVisible === 6 ?
                           <UserSettingsTab />
-                          : null
+                          : <WIPTab/>
             }
 
           </div>

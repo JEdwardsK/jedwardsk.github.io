@@ -30,6 +30,7 @@ import githublogo from '../../assets/logos/github.png'
 
 
 import eShopPic from '../../assets/nintendo-icons/eshop.png'
+import switchIcon from '../../assets/nintendo-icons/switch.png'
 import linkPic from '../../assets/images/windlink.png'
 
 
@@ -275,7 +276,7 @@ const HomePage = () => {
               </div>
             </div>
           </Toast.Header>
-          <Toast.Body styles={{ color: '#6c757d' }}>Hi! Click the switch icon at the bottom left of the screen for some info on site navigation!</Toast.Body>
+          <Toast.Body styles={{ color: '#6c757d' }}>Hi! Click the Nintendo Switch icon <img src={switchIcon} alt=" nintendo switch icon" style={{ width: '36px' }} /> at the bottom left of the screen for some info on site navigation!</Toast.Body>
         </Toast>
 
         <Modal

@@ -65,13 +65,11 @@ const SiteSummary = () => {
             <p>
               Clicking on the Settings Tab will redirect you to the Settings page. At the moment there are not any interactive functions. In the future there will be added functionality such as changing the theme or language.
             </p>
-            <h3>My Projects</h3>
-            <p>F</p>
           </section>
           <section id="navigation-profile">
             <h2>Profile</h2>
             <p>
-              The Profile Page has a number of tabs.
+              The Profile Page has a number of tabs. At current only two have been completed
             </p>
             <h5>Profile</h5>
 

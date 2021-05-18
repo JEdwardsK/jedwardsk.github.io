@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import Footer from '../Footer'
 import AmiiboTab from '../settingsTabs/AmiiboTab'
@@ -16,6 +17,9 @@ import SystemTab from '../settingsTabs/SystemTab'
 import ThemesTab from '../settingsTabs/ThemesTab'
 import TVOutputTab from '../settingsTabs/TVOutputTab'
 import UserTab from '../settingsTabs/UserTab'
+
+import settingsSVG from '../../assets/svgs/settings.svg'
+
 
 const SettingsPage = () => {
 
@@ -41,8 +45,9 @@ const SettingsPage = () => {
 
   return (
     <div className="settings-page-container">
-      <div className="settings-page-header header">
-        <p>Systems Settings</p>
+      <div className="profile-header header">
+        <img src={settingsSVG} alt="settings icon" />
+        <h4>Systems Settings</h4>
       </div>
       <hr />
       <div className="settings-page-body body">

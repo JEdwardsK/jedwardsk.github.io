@@ -1,9 +1,12 @@
 import React from 'react'
+import WIPTab from './WIPTab'
 
 const FriendsTrendingTab = () => {
   return (
     <div>
-      i am the trending tabs page
+      <h2>Friends Trending</h2>
+      <br />
+      <WIPTab/>
     </div>
   )
 }

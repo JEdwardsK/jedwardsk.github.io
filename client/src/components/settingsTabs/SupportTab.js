@@ -1,17 +1,19 @@
 import React from 'react'
+import WIPTab from '../profileTabs/WIPTab'
 
 const SupportTab = () => {
   return (
-    <>
-      <div>
-        If you want to no more about the Nintendo Switch and its features, visit the Nintendo Support wwebsite on your smart device or PC.
-      </div>
-      <div>
-        <a href="https://www.nintendo.com/consumer/assets/region_select.jsp">
-          <p>support.nintendo.com</p>
-        </a>
-      </div>
-    </>
+    <WIPTab />
+    // <>
+    //   <div>
+    //     If you want to no more about the Nintendo Switch and its features, visit the Nintendo Support wwebsite on your smart device or PC.
+    //   </div>
+    //   <div>
+    //     <a href="https://www.nintendo.com/consumer/assets/region_select.jsp">
+    //       <p>support.nintendo.com</p>
+    //     </a>
+    //   </div>
+    // </>
   )
 }
 

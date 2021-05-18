@@ -1,9 +1,12 @@
 import React from 'react'
+import WIPTab from './WIPTab'
 
 const FriendSuggestionsTab = () => {
   return (
     <div>
-      Friends sugestion tab
+      <h2>Friends Suggestions Tab</h2>
+      <br />
+      <WIPTab/>
     </div>
   )
 }

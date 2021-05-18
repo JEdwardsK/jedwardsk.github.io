@@ -37,7 +37,7 @@ const ProjectsCard = ({ projectToDisplay }) => {
           </small>
           <Accordion>
             <Accordion.Toggle as={Button} variant="link" eventKey="0">
-          Click for more/less info...
+          Click for more info...
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <>
