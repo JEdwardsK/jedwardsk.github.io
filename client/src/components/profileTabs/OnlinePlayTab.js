@@ -1,9 +1,10 @@
 import React from 'react'
+import WIPTab from '../WIPTab'
 
 const OnlinePlayTab = () => {
   return (
     <div>
-      I am the online pplay tab
+      <WIPTab header='Online Play'/>
     </div>
   )
 }

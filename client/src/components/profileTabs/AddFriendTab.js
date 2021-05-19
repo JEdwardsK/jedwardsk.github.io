@@ -1,9 +1,10 @@
 import React from 'react'
+import WIPTab from '../WIPTab'
 
 const AddFriendTab = () => {
   return (
     <div>
-      i am the add friends tab!
+      <WIPTab header="Add Friend"/>
     </div>
   )
 }

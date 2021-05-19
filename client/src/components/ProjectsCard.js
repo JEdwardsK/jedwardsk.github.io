@@ -37,24 +37,25 @@ const ProjectsCard = ({ projectToDisplay }) => {
           </small>
           <Accordion>
             <Accordion.Toggle as={Button} variant="link" eventKey="0">
-          Click for more/less info...
+          Click for more info...
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <>
                 <Card.Text>
-                  {/* {about.map((paragraph, index)=> {
+                  <br />
+                  {about.map((paragraph, index)=> {
 
-                      return <p key={index}>{paragraph}</p>
-                    })} */}
+                    return <p key={index}>{paragraph}</p>
+                  })}
                 </Card.Text>
-                <Card.Text><a href={deployedLink}>view project</a></Card.Text>
+                <Card.Text><a href={deployedLink}>View Project</a></Card.Text>
                 {collaborators.length > 0 &&
 
                         <ListGroup variant="flush"> <h5>Team Members</h5>
                           {collaborators.map((collaborator, index) => {
                             const { name, github, linkedIn } = collaborator
                             return (
-                              <ListGroup.Item key={index} className="team-member">
+                              <ListGroup.Item style={{ backgroundColor: 'white' }} key={index} className="team-member">
                                 <p>{name}</p>
                                 <a href={github}>
                                   <FontAwesomeIcon icon={faGithubSquare} size="2x" />

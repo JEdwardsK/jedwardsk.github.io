@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import Footer from '../Footer'
 import AmiiboTab from '../settingsTabs/AmiiboTab'
@@ -16,6 +17,9 @@ import SystemTab from '../settingsTabs/SystemTab'
 import ThemesTab from '../settingsTabs/ThemesTab'
 import TVOutputTab from '../settingsTabs/TVOutputTab'
 import UserTab from '../settingsTabs/UserTab'
+import settingsSVG from '../../assets/svgs/settings.svg'
+import WIPTab from '../WIPTab'
+
 
 const SettingsPage = () => {
 
@@ -41,9 +45,11 @@ const SettingsPage = () => {
 
   return (
     <div className="settings-page-container">
-      <div className="settings-page-header header">
-        <p>Systems Settings</p>
+      <div className="profile-header header">
+        <img src={settingsSVG} alt="settings icon" />
+        <h4>Systems Settings</h4>
       </div>
+
       <hr />
       <div className="settings-page-body body">
         <div className="settings-sidebar">
@@ -71,40 +77,41 @@ const SettingsPage = () => {
           })}
         </div>
         <div className="profile-main">
+          <WIPTab header='Settings'/>
           {
-            tabVisible === 0 ?
-              <SupportTab /> :
-              tabVisible === 1 ?
-                <FlightModeTab /> :
-                tabVisible === 2 ?
-                  <ScreenBrightnessTab /> :
-                  tabVisible === 3 ?
-                    <ScreenLockTab /> :
-                    tabVisible === 4 ?
-                      <ParentalControlTab /> :
-                      tabVisible === 5 ?
-                        <InternetTab /> :
-                        tabVisible === 6 ?
-                          <DataManagementTab /> :
-                          tabVisible === 7 ?
-                            <UserTab /> :
-                            tabVisible === 8 ?
-                              <MiiTab /> :
-                              tabVisible === 9 ?
-                                <AmiiboTab /> :
-                                tabVisible === 10 ?
-                                  <ThemesTab /> :
-                                  tabVisible === 11 ?
-                                    <NotificationsTab /> :
-                                    tabVisible === 12 ?
-                                      <SleepModeTab /> :
-                                      tabVisible === 13 ?
-                                        <ControllersTab /> :
-                                        tabVisible === 14 ?
-                                          <TVOutputTab /> :
-                                          tabVisible === 15 ?
-                                            <SystemTab /> :
-                                            null
+            // tabVisible === 0 ?
+            //   <SupportTab /> :
+            //   tabVisible === 1 ?
+            //     <FlightModeTab /> :
+            //     tabVisible === 2 ?
+            //       <ScreenBrightnessTab /> :
+            //       tabVisible === 3 ?
+            //         <ScreenLockTab /> :
+            //         tabVisible === 4 ?
+            //           <ParentalControlTab /> :
+            //           tabVisible === 5 ?
+            //             <InternetTab /> :
+            //             tabVisible === 6 ?
+            //               <DataManagementTab /> :
+            //               tabVisible === 7 ?
+            //                 <UserTab /> :
+            //                 tabVisible === 8 ?
+            //                   <MiiTab /> :
+            //                   tabVisible === 9 ?
+            //                     <AmiiboTab /> :
+            //                     tabVisible === 10 ?
+            //                       <ThemesTab /> :
+            //                       tabVisible === 11 ?
+            //                         <NotificationsTab /> :
+            //                         tabVisible === 12 ?
+            //                           <SleepModeTab /> :
+            //                           tabVisible === 13 ?
+            //                             <ControllersTab /> :
+            //                             tabVisible === 14 ?
+            //                               <TVOutputTab /> :
+            //                               tabVisible === 15 ?
+            //                                 <SystemTab /> :
+            //                                 null
           }
         </div>
       </div>

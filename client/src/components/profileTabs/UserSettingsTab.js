@@ -1,10 +1,10 @@
 import React from 'react'
+import WIPTab from '../WIPTab'
 
 const UserSettingsTab = () => {
   return (
     <div>
-      user settings page
-
+      <WIPTab header="User Settings"/>
     </div>
   )
 }

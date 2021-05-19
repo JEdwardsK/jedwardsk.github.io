@@ -55,7 +55,7 @@ import typescriptLogo from '../assets/logos/typescript.png'
   const nextJS = new Skill('NextJS', null, nextjsLogo, -1)
 
 export const currentSkills = [
-  javaScript, html, css, react, nodeJs, express, insomnia, mongoose, yarn, pip, pipenv, python, postgresql,
+  javaScript, html, css, react, nodeJs, express, insomnia, mongoose, yarn, python, postgresql,
   tablePlus, mongodb, django, sCSS, bulma, bootstrap
 ]
 
@@ -68,7 +68,7 @@ export const futureSkills = [
 ]
 
 export const allSkills = [
-  javaScript, html, css, react, nodeJs, express, insomnia, mongoose, yarn, pip, pipenv, python, postgresql, tablePlus, mongodb, django, sCSS, bulma, bootstrap, typescript, aWS, reactNative, tailwind, nextJS
+  javaScript, html, css, react, nodeJs, express, insomnia, mongoose, yarn, python, postgresql, tablePlus, mongodb, django, sCSS, bulma, bootstrap, typescript, aWS, reactNative, tailwind, nextJS
 ]
 
 export const skillHighlight = typescript
