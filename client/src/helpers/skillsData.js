@@ -21,18 +21,19 @@ import typescriptLogo from '../assets/logos/typescript.png'
     this.name = name
     this.icon = icon
     this.altImage = altImage
+    this.hours = time
     this.experience =
       time < 0 ? 'Game on wishlist'
       : time === 0 ? 'Game Installed'
         : (time > 0 && time <= 10) ? 'Just started playing'
           : (time > 10 && time <= 20) ? 'Played for a little while'
-            : `Played for ${time} hours`
+            : `Played for ${time} hours or more`
   }
 }
-  const javaScript = new Skill('JavaScript', faJsSquare, null, 20)
-  const html = new Skill('HTML', faHtml5, null, 20)
-  const css = new Skill('CSS', faCss3,null, 20)
-  const react = new Skill('React (Hooks)', faReact, null, 20)
+  const javaScript = new Skill('JavaScript', faJsSquare, null, 480)
+  const html = new Skill('HTML', faHtml5, null, 480)
+  const css = new Skill('CSS', faCss3,null, 480)
+  const react = new Skill('React (Hooks)', faReact, null, 200)
   const nodeJs = new Skill('Nodejs', faNodeJs, null, 20)
   const express = new Skill('Express', null, expressLogo, 20)
   const insomnia = new Skill('Insomnia', null,insomniaLogo, 20 )
@@ -71,7 +72,7 @@ export const allSkills = [
   javaScript, html, css, react, nodeJs, express, insomnia, mongoose, yarn, python, postgresql, tablePlus, mongodb, django, sCSS, bulma, bootstrap, typescript, aWS, reactNative, tailwind, nextJS
 ]
 
-export const skillHighlight = typescript
+export const skillHighlight = javaScript
   //#endregion
 
   const styleObject = (altImage) => {

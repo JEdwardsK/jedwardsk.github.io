@@ -7,6 +7,7 @@ import FeaturedPage from './components/sitePages/FeaturedPage'
 import ProfilePage from './components/sitePages/ProfilePage'
 import SettingsPage from './components/sitePages/SettingsPage'
 import HomePage from './components/sitePages/HomePage'
+import AllProjectsPage from './components/sitePages/AllProjectsPage'
 
 
 const App = () => {
@@ -14,6 +15,9 @@ const App = () => {
 
     <BrowserRouter>
       <Switch>
+        <Route path="/all-projects">
+          <AllProjectsPage/>
+        </Route>
         <Route path="/settings">
           <SettingsPage/>
         </Route>

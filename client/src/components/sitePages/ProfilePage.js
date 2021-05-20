@@ -21,14 +21,16 @@ const ProfilePage = () => {
   const handleTabToggle = (event) => {
     const { value } = event.target
     const input = parseInt(value)
-    setTabVisible(input)
+    if ((input === 0) || (input === 1)) setTabVisible(input)
   }
 
   const sidebarHeaders = ['Profile','Friend List','Trending With Friends','Online Play Invitations','Friend Suggestions','Add Friend','User Settings']
 
   const handleMouseEnter = (event) => {
     const { value } = event.target
-    setHoverFocus(Number(value))
+    if ((Number(value) === 0) || (Number(value) === 1)) {
+      setHoverFocus(Number(value))
+    }
   }
   const handleMouseExit = () => {
     setHoverFocus(-1)

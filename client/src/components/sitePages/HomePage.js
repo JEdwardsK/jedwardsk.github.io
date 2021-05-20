@@ -71,8 +71,11 @@ const HomePage = () => {
   const handleMouseEnter = (event) => {
     const { value } = event.target
     const numValue = Number(value)
-    defaultHoverSound.play()
-    setHoverFocus(numValue)
+    const unusedButtons = [-5, -6, -7, -8, -9]
+    if (!unusedButtons.includes(numValue)) {
+      defaultHoverSound.play()
+      setHoverFocus(numValue)
+    }
   }
   const handleMouseExit = () => {
     setHoverFocus(-1)
@@ -83,13 +86,22 @@ const HomePage = () => {
 
   const handlePageChange = (event) => {
     const { name } = event.target
-    if (name === 'profile') {
-      profileSound.play()
-      history.push('/profile')
-    } else if (name === 'settings') {
-      settingsSound.play()
-      history.push('/settings')
+
+    switch (name) {
+      case 'profile':
+        profileSound.play()
+        history.push('/profile')
+        break
+      case 'all-projects':
+        allProjectsClick.play()
+        history.push('/all-projects')
+        break
+      // case 'settings':
+        // settingsSound.play()
+        // history.push('/settings')
+        // break
     }
+
   }
   const handleCloseModal = () => {
     projectClose.play()
@@ -98,9 +110,7 @@ const HomePage = () => {
 
   const handleToast = () => setIsToastVisible(false)
   const eshopPlaySound = () => eshopSoundClick.play()
-  const handleAllProjects = () => {
-    allProjectsClick.play()
-  }
+
 
   return (
     <>
@@ -145,7 +155,8 @@ const HomePage = () => {
                 }
                 <button
                   className={`${hoverFocus === -10 && focusClass}`}
-                  onClick={handleAllProjects}
+                  name="all-projects"
+                  onClick={handlePageChange}
                   value="-10"
                   style={{ backgroundImage: `url(${allprojectsSVG})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}
                   onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
@@ -192,7 +203,7 @@ const HomePage = () => {
                 className={`homescreen-button ${hoverFocus === -5 && focusClass}`}
                 value="-5"
                 style={
-                  { backgroundImage: `url(${eShopPic})` }
+                  { backgroundImage: `url(${eShopPic})`, cursor: 'default' }
                 }
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
                 onClick={eshopPlaySound}/>
@@ -207,9 +218,9 @@ const HomePage = () => {
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
                 style={
                   {
-                    backgroundImage: `url(${hoverFocus === -6 ? codepenlogo : albumSVG})`,
-                  }}
-
+                    backgroundImage: `url(${hoverFocus === -6 ? codepenlogo : albumSVG})`, cursor: 'default',
+                  }
+                }
               />
               { hoverFocus === -6 &&
                 <p className="button-tag">Codepen</p>
@@ -220,7 +231,7 @@ const HomePage = () => {
                 className={`homescreen-button ${hoverFocus === -7 && focusClass}`}
                 value="-7"
                 style={
-                  { backgroundImage: `url(${controllerSVG})` }
+                  { backgroundImage: `url(${controllerSVG})`,cursor: 'default' }
                 }
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
               { hoverFocus === -7 &&
@@ -233,7 +244,7 @@ const HomePage = () => {
                 className={`homescreen-button ${hoverFocus === -8 && focusClass}`}
                 value="-8"
                 style={
-                  { backgroundImage: `url(${settingsSVG})` }
+                  { backgroundImage: `url(${settingsSVG})`,cursor: 'default' }
                 }
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
               { hoverFocus === -8 &&
@@ -245,7 +256,7 @@ const HomePage = () => {
                 className={`homescreen-button ${hoverFocus === -9 && focusClass}`}
                 value="-9"
                 style={
-                  { backgroundImage: `url(${powerSVG})` }
+                  { backgroundImage: `url(${powerSVG})`,cursor: 'default' }
                 }
                 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
               { hoverFocus === -9 &&
@@ -258,7 +269,7 @@ const HomePage = () => {
 
         <Toast
           delay={5000}
-          // autohide
+          autohide
           show={isToastVisible}
           onClose={handleToast}
           className="animate__animated animate__slideInLeft"

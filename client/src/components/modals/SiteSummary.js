@@ -5,8 +5,6 @@ import MySkills from '../MySkills'
 const SiteSummary = () => {
   return (
     <Card style={{ overflow: 'auto', height: '300px' }}>
-      <Card.Header>
-      </Card.Header>
       <Card.Body>
         <Card.Text>
           <section id="first">
@@ -16,7 +14,6 @@ const SiteSummary = () => {
             </p>
             <p>
               Navigating through the various pages will display information about what I have worked on, who with and how to find me. If you would like to play around, click close and enjoy!
-
             </p>
             <p>
               If you would like some information on where things are located, or what elements are interactive, click on the tabs above for a walkthrough of the relevant page
@@ -31,33 +28,44 @@ const SiteSummary = () => {
               Thanks for visiting my site!
             </p>
           </section>
+          <br />
+          <hr />
+          <br />
           <section id="key-info-skills">
             <h2>My Skills</h2>
-            <MySkills/>
+            <br />
+            <MySkills location='homepage'/>
           </section>
+          <br />
+          <hr />
+          <br />
           <section id="key-info-contact">
             <h2>Contact Details</h2>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/jedwardsk/">JEdwardsK</a></p>
             <p>GitHub: <a href="https://github.com/JEdwardsK">JEdwardsK</a></p>
           </section>
+          <br />
+          <hr />
+          <br />
           <section id="navigation-homepage">
             <h2>HomePage</h2>
+            <br />
             <p>
               On the homescreen, substituting installed games, you can scroll through my most recent projects. Clicking on the project will open up a short summary of the project, its repo and deployed link, and links to any collaborators if I worked in a pair or team.
             </p>
             <p>
-              Clicking on all projects will direct to a view of all of the projects I have worked on, what I am currently working on, and any future projects or ideas I have (not yet, I’ve only got a few completed projects, which still need fixing, give me time!).
+              {' Clicking on all projects will direct to a view of all of the projects I have worked on, what I am currently working on, and any future projects or ideas I have (not yet, I\'ve only got a few completed projects, which still need fixing, give me time!).'}
             </p>
             <p>
               Hovering over the homescreen buttons may change the icons. Where icons change, these are links to the relevant sites. Listed below are the buttons with their associated links:
             </p>
             <ul>
               <li>Nintendo Online - GitHub</li>
-              <li>Nintendo eShop - LinkedIn</li>
-              <li>Album - CodePen (not yet! I haven’t started any pens yet)</li>
+              <li>News - LinkedIn</li>
+              <li>{'Album - CodePen (not yet! I haven\'t started any pens yet)'}</li>
             </ul>
             <p>
-              The B Button icon will navigate you back to your last viewed page, unless you are on the homepage, where it will disappear
+              {'The \'B Back\' icon will navigate you back to your last viewed page, unless you are on the homepage, where it will disappear'}
             </p>
             <p>
               Clicking on the Icon at the top left will navigate to the Profile Page. Here you can see information about my skills.
@@ -65,11 +73,13 @@ const SiteSummary = () => {
             <p>
               Clicking on the Settings Tab will redirect you to the Settings page. At the moment there are not any interactive functions. In the future there will be added functionality such as changing the theme or language.
             </p>
-            <h3>My Projects</h3>
-            <p>F</p>
           </section>
+          <br />
+          <hr />
+          <br />
           <section id="navigation-profile">
             <h2>Profile</h2>
+            <br />
             <p>
               The Profile Page has a number of tabs.
             </p>
@@ -101,7 +111,7 @@ const SiteSummary = () => {
             </p>
 
             <p>
-              The Trending with Friends Tab is a tab that notes any particular interesting bits of info I have come across recently
+              The Trending with Friends Tab could notes any particular interesting bits of info I have come across recently
 
             </p>
             <p>
@@ -116,12 +126,18 @@ const SiteSummary = () => {
               User settings is a tab for fluff. Changing profile picture perhaps, but most likely just for appearance, with no functionality
             </p>
           </section>
-          <section id="navigation-settings">
+          <br />
+          <hr />
+          <br />
+          {/* <section id="navigation-settings">
             <h2>Settings</h2>
             <p>
-              All of settings is currently WIP. None have functionality and was an exercise in styling
+              All of settings is currently WIP.
             </p>
-          </section>
+          </section> */}
+          <br />
+          <hr />
+          <br />
         </Card.Text>
       </Card.Body>
     </Card>

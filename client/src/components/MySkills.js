@@ -8,7 +8,11 @@ const MySkills = () => {
   return (
     <>
       <section>
-        <h3>Experience With</h3>
+        {location === 'homepage' ?
+          <h4>{'Technologies I\'ve Used'}</h4> :
+          <h3>{'Technologies I\'ve Used'}</h3>
+        }
+        <br />
         <Row lg="5" md="3" className="skills-container">
           {currentSkills.map((skill, index) => {
             const { name, icon, altImage } = skill
@@ -28,8 +32,13 @@ const MySkills = () => {
           })}
         </Row>
       </section>
+      <br />
       <section>
-        <h3>Current Learning Focuses</h3>
+        {location === 'homepage' ?
+          <h4>Current Learning Focuses</h4> :
+          <h3>Current Learning Focuses</h3>
+        }
+        <br />
         <div className="skills-container">
           {developingSkills.map((skill, index) => {
             const { name, icon, altImage } = skill
@@ -44,8 +53,13 @@ const MySkills = () => {
           })}
         </div>
       </section>
+      <br />
       <section>
-        <h3>Future Learning Goals</h3>
+        {location === 'homepage' ?
+          <h4>Future Learning Goals</h4> :
+          <h3>Future Learning Goals</h3>
+        }
+        <br />
         <div className="skills-container">
           {futureSkills.map((skill, index) => {
             const { name, icon, altImage } = skill

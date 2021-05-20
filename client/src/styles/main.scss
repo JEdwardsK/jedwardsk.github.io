@@ -23,20 +23,22 @@ hr {
   background-color: $background-default;
 }
 
-
-.highlight {
-  animation: hover-focus 1s linear infinite;
+p {
+  max-width: 60ch;
 }
+
+
 
 .header, .footer {
-  height: 10%
+  height: 10vh
 }
 .body {
-  height: 80%
+  height: 80vh
 }
 
 #root{
-  height: 800px;
+  height: 100vh;
+  width: 100vw;
 }
 //? LOCKSCREEN STYLING
 .lockscreen-container {
@@ -324,9 +326,8 @@ hr {
 }
 
 .profile-page-body, .settings-page-body{
-  height:640px;
+  height:80vh;
   overflow: scroll;
-  background-color: burlywood;
   position: relative;
   display: flex;
   .profile-sidebar, .settings-sidebar{
@@ -446,13 +447,14 @@ hr {
   a {
   color: $brand-red;
   flex: .5;
-  align-self:right;
+  background-color: white
   };
   a :hover {
     color:$brand-grey;
   }
   p {
-    flex: 2
+    flex: 2;
+    background-color: white;
   }
 
 }
@@ -533,14 +535,28 @@ hr {
 
 @keyframes hover-focus {
   0% {
-    outline: 5px solid cyan;
+    border: 5px solid cyan;
   }
   50% {
-    outline: 5px solid darkcyan;
+    border: 5px solid darkcyan;
   }
 
   100% {
+    border: 5px solid cyan;
+  }
+
+}
+@keyframes moz-hover-focus {
+  0% {
     outline: 5px solid cyan;
+    -moz-outline-radius: 5px solid cyan;
+  }
+  50% {
+    -moz-outline-radius: 5px solid darkcyan;
+  }
+
+  100% {
+    -moz-outline-radius: 5px solid cyan;
   }
 
 }
@@ -602,4 +618,19 @@ hr {
   background-color: white;
 }
 
+// @media only screen and (max-width:1327px) {
+//   .logo-container{
+//     margin-right: 36px;
+//   }
+// }
+// @media only screen and (max-width: 983px) {
+//   .homescreen-body-buttons {
+//     overflow-inline: scroll;
+//   }
+// }
 
+.highlight {
+  // -webkit-animation: hover-focus 1s linear infinite;
+  // -moz-animation: hover-focus 1s linear infinite;
+  animation: hover-focus 1s linear infinite;
+}

@@ -66,9 +66,9 @@ const Footer = () => {
           <Nav.Item>
             <Nav.Link href="#navigation-profile">Profile</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          {/* <Nav.Item>
             <Nav.Link href="#navigation-settings">Settings</Nav.Link>
-          </Nav.Item>
+          </Nav.Item> */}
         </Nav>
         <Modal.Body>
           <SiteSummary/>
