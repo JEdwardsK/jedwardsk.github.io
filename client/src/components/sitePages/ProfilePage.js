@@ -57,11 +57,9 @@ const ProfilePage = () => {
                   onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
                   style={
                     {
-
                       color: `${hoverFocus === index ? 'blue' : ''}`,
                       backgroundColor: `${hoverFocus === index ? 'white' : 'transparent'}`,
                       borderBottom: `${index === 0 || index === 5 ? '2px solid lightgrey' : ''}`,
-                      // borderLeft: `${hoverFocus === index ? '5px solid blue' : '5px solid transparent'}`,
                     }
                   }
                 >
