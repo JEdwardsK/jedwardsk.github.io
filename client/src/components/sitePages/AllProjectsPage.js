@@ -52,7 +52,7 @@ const AllProjectsPage = () => {
       <div className="profile-page-container">
         <div className="profile-header header">
           <img src={allprojectsSVG} alt="profile avatar" />
-          <h4>All Software</h4>
+          <h4>All Projects</h4>
         </div>
         <hr />
         <div className="all-projects-body body">
