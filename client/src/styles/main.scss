@@ -85,12 +85,6 @@ p {
   }
   .main {
     position:relative;
-    .infobar-container {
-
-    }
-    .centre-content {
-
-    }
     .continue-button-container {
       border: 2px solid red;
       bottom: 7%;
@@ -155,8 +149,6 @@ p {
   }
 
   .homescreen-body {
-    // background-color: thistle;
-    // height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -165,8 +157,6 @@ p {
       height: 100%;
       align-items: center;
       padding-top: 60px;
-      // margin-top: 100px;
-      // margin-bottom: 30px;
       overflow-inline: scroll;
       .carousel-item-container {
         position: relative;
@@ -177,11 +167,9 @@ p {
         .scrolling-text {
           align-self: center;
           overflow:hidden;
-          // margin: 0 auto;
           white-space: nowrap;
           position: absolute;
           top:-40px;
-          // margin: 0 25px 25px;
           width: 310px;
           background-color: transparent;
 
@@ -190,17 +178,10 @@ p {
             font-size: 25px;
             display: inline-block;
             background-color: transparent;
-            // padding-left: 100%;
             color: $hover-colour;
             animation: text-scroll 12s linear infinite
-            // text-focus 1s linear infinite;
           }
         }
-
-        // .scrolling-text span {
-        //   display: inline;
-        //   animation: text-scroll 1s linear infinite;
-        // }
         .carousel-item {
           border: 3px solid white;
           display: inline;
@@ -268,7 +249,6 @@ p {
           bottom: 0;
           width: auto;
           white-space: nowrap;
-          // overflow: visible;
 
         }
       }
@@ -301,15 +281,6 @@ p {
 .profile-page-container {
   display: flex;
   flex-direction: column;
-
-  .footer {
-    height: 80px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-
-
 }
 
 .profile-header {
@@ -350,9 +321,6 @@ p {
     .profile-sidebar-headers:first{
       border-bottom: $divider;
     }
-    // .profile-sidebar-headers::after{
-    //   border: 2px solid orange;
-    // }
   }
 
   .profile-main, .settings-main {
@@ -474,10 +442,6 @@ p {
     align-content: center;
     align-items: center;
 
-    .skill-logo{
-
-    };
-
     .skill-name{
       flex: 1;
       text-align: center;
@@ -499,6 +463,7 @@ p {
       background-color: none;
       border: none;
       width: 80px;
+      height: 40px
     }
     .controller-buttons-container {
       display: flex;
@@ -506,7 +471,6 @@ p {
     .footer-button {
       display: flex;
       height: 48px;
-      margin-top: 15px;
       align-items: center;
       border: none;
       background-color: transparent;
@@ -559,32 +523,7 @@ p {
   }
 
 }
-@keyframes moz-hover-focus {
-  0% {
-    outline: 5px solid cyan;
-    -moz-outline-radius: 5px solid cyan;
-  }
-  50% {
-    -moz-outline-radius: 5px solid darkcyan;
-  }
 
-  100% {
-    -moz-outline-radius: 5px solid cyan;
-  }
-
-}
-
-// @keyframes text-focus {
-//   0% {
-//     color: cyan;
-//   }
-//   50% {
-//     color: darkcyan;
-//   }
-
-//   100% {
-//     color: cyan;
-//   }
 
 .collab-card-deck {
   display: flex;
@@ -643,13 +582,9 @@ p {
 // }
 
 .highlight {
-  // -webkit-animation: hover-focus 1s linear infinite;
-  // -moz-animation: hover-focus 1s linear infinite;
   animation: hover-focus 1s linear infinite;
 }
 .highlight2 {
-  // -webkit-animation: hover-focus 1s linear infinite;
-  // -moz-animation: hover-focus 1s linear infinite;
   animation: hover-focus2 1s linear infinite;
 }
 
@@ -686,12 +621,6 @@ p {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 2vh 2vh;
-
-
-
-/* Inline #0 | http://localhost:3000/all-projects */
-
-
 
 }
 

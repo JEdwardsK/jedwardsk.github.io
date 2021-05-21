@@ -15,7 +15,8 @@ const ProfileTab = () => {
     setIsModalVisible(true)
   }
 
-  console.log(allSkills[0])
+
+
 
   return (
     <div className="profile-profile-tab">
@@ -52,7 +53,8 @@ const ProfileTab = () => {
         <div className="skills">
           {
             allSkills.map((skill, index) => {
-              const { name, icon, altImage, experience } = skill
+              const { name, icon, altImage, hours, experience } = skill
+
               return (
                 <div className="play-container" key={index}>
                   <div className="logo-container">
@@ -64,7 +66,7 @@ const ProfileTab = () => {
                   </div>
                   <div className="skill-description">
                     <p className="skill-name">{name}</p>
-                    <p style= {{ color: 'blue' }}>{experience}</p>
+                    <p style= {{ color: `${ hours >= 100 ? 'blue' : 'grey'}` }}>{experience}</p>
                   </div>
                 </div>
               )

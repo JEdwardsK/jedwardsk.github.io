@@ -1,5 +1,5 @@
-/* eslint-disable indent */
 /* eslint-disable no-unused-vars */
+
 import { faAws, faBootstrap, faCss3, faHtml5, faJsSquare, faNodeJs, faPython, faReact, faSass, faYarn } from '@fortawesome/free-brands-svg-icons'
 
 import bulmaLogo from '../assets/logos/bulma.png'
@@ -15,45 +15,55 @@ import tableplusLogo from '../assets/logos/tableplus.png'
 import tailwindLogo from '../assets/logos/tailwind.png'
 import typescriptLogo from '../assets/logos/typescript.png'
 
-  //#region skills Arrays
-  class Skill {
-  constructor(name, icon, altImage, time) {
+import botw from '../assets/games/botw.png'
+import cupheadPic from '../assets/games/cuphead.jpg'
+
+//#region skills Arrays
+
+export class Skill {
+  constructor(name, icon, altImage, hours) {
     this.name = name
     this.icon = icon
     this.altImage = altImage
-    this.hours = time
+    this.hours = hours
     this.experience =
-      time < 0 ? 'Game on wishlist'
-      : time === 0 ? 'Game Installed'
-        : (time > 0 && time <= 10) ? 'Just started playing'
-          : (time > 10 && time <= 20) ? 'Played for a little while'
-            : `Played for ${time} hours or more`
+      hours < 0 ? 'Game on wishlist'
+        : hours === 0 ? 'Game Installed'
+          : (hours > 0 && hours <= 10) ? 'Just started playing'
+            : (hours > 10 && hours <= 20) ? 'Played for a little while'
+              : `Played for ${hours} hours or more`
   }
 }
-  const javaScript = new Skill('JavaScript', faJsSquare, null, 480)
-  const html = new Skill('HTML', faHtml5, null, 480)
-  const css = new Skill('CSS', faCss3,null, 480)
-  const react = new Skill('React (Hooks)', faReact, null, 200)
-  const nodeJs = new Skill('Nodejs', faNodeJs, null, 20)
-  const express = new Skill('Express', null, expressLogo, 20)
-  const insomnia = new Skill('Insomnia', null,insomniaLogo, 20 )
-  const mongoose = new Skill('Mongoose ODM', null, mongooseLogo, 20)
-  const yarn = new Skill('Yarn', faYarn, null, 20)
-  const pip = new Skill('Pip', null, pipLogo, 20)
-  const pipenv = new Skill('Pipenv', faPython, null, 20)
-  const python = new Skill('Python', faPython, null, 20)
-  const postgresql = new Skill('PostgreSQL', null, postgresqlLogo, 10)
-  const tablePlus = new Skill('TablePlus', null, tableplusLogo, 10)
-  const mongodb = new Skill('MongoDB', null, mongodbLogo, 20)
-  const django = new Skill('Django', null, djangoLogo, 20)
-  const sCSS = new Skill('SCSS', faSass, null, 20)
-  const bulma = new Skill('Bulma', null, bulmaLogo, 20)
-  const bootstrap = new Skill('Bootstrap', faBootstrap, null, 20)
-  const typescript = new Skill('TypeScript', null, typescriptLogo, 0)
-  const aWS = new Skill('AWS', faAws, null, -1)
-  const reactNative = new Skill('React Native', faReact, null, -1)
-  const tailwind = new Skill('Tailwind', null, tailwindLogo, -1)
-  const nextJS = new Skill('NextJS', null, nextjsLogo, -1)
+
+const javaScript = new Skill('JavaScript', faJsSquare, null, 480)
+const html = new Skill('HTML', faHtml5, null, 480)
+const css = new Skill('CSS', faCss3,null, 480)
+const react = new Skill('React (Hooks)', faReact, null, 200)
+const nodeJs = new Skill('Nodejs', faNodeJs, null, 20)
+const express = new Skill('Express', null, expressLogo, 20)
+const insomnia = new Skill('Insomnia', null,insomniaLogo, 20 )
+const mongoose = new Skill('Mongoose ODM', null, mongooseLogo, 20)
+const yarn = new Skill('Yarn', faYarn, null, 20)
+const pip = new Skill('Pip', null, pipLogo, 20)
+const pipenv = new Skill('Pipenv', faPython, null, 20)
+const python = new Skill('Python', faPython, null, 20)
+const postgresql = new Skill('PostgreSQL', null, postgresqlLogo, 10)
+const tablePlus = new Skill('TablePlus', null, tableplusLogo, 10)
+const mongodb = new Skill('MongoDB', null, mongodbLogo, 20)
+const django = new Skill('Django', null, djangoLogo, 20)
+const sCSS = new Skill('SCSS', faSass, null, 20)
+const bulma = new Skill('Bulma', null, bulmaLogo, 20)
+const bootstrap = new Skill('Bootstrap', faBootstrap, null, 20)
+const typescript = new Skill('TypeScript', null, typescriptLogo, 0)
+const aWS = new Skill('AWS', faAws, null, -1)
+const reactNative = new Skill('React Native', faReact, null, -1)
+const tailwind = new Skill('Tailwind', null, tailwindLogo, -1)
+const nextJS = new Skill('NextJS', null, nextjsLogo, -1)
+
+
+const zelda = new Skill('The Legend of Zelda: Breath of the Wild', null, botw, 135)
+const cuphead = new Skill('Cuphead', null, cupheadPic, 25)
+
 
 export const currentSkills = [
   javaScript, html, css, react, nodeJs, express, insomnia, mongoose, yarn, python, postgresql,
@@ -61,7 +71,7 @@ export const currentSkills = [
 ]
 
 export const developingSkills = [
-    python, sCSS, postgresql, typescript
+  python, sCSS, postgresql, typescript
 ]
 
 export const futureSkills = [
@@ -69,85 +79,19 @@ export const futureSkills = [
 ]
 
 export const allSkills = [
-  javaScript, html, css, react, nodeJs, express, insomnia, mongoose, yarn, python, postgresql, tablePlus, mongodb, django, sCSS, bulma, bootstrap, typescript, aWS, reactNative, tailwind, nextJS
+  javaScript, html, css, cuphead, react, typescript, nodeJs, express, insomnia, mongoose, yarn, zelda, python, postgresql, tablePlus, mongodb, django, sCSS, bulma, bootstrap, aWS, reactNative, tailwind, nextJS
 ]
 
 export const skillHighlight = javaScript
-  //#endregion
+//#endregion
 
-  const styleObject = (altImage) => {
-    const styleObj = {
-      background: `no-repeat center/contain url(${altImage})`,
-      height: '60',
-      width: '60',
-      flex: 2,
+const styleObject = (altImage) => {
+  const styleObj = {
+    background: `no-repeat center/contain url(${altImage})`,
+    height: '60',
+    width: '60',
+    flex: 2,
 
-}
-    return styleObj
   }
-
-//   return (
-//     <>
-//       <section>
-//         <h2>
-//           Hi! I am a full stack developer looking for the opportunity to <TypeText/>
-//         </h2>
-//       </section>
-//       <section>
-//         <h3>Experience With</h3>
-//         <Row lg="5" md="3" className="skills-container">
-//           {currentSkills.map((skill, index) => {
-//             const { name, icon, altImage } = skill
-//             return (
-//               <Col className="skill" key={index}>
-//                 { !icon ?
-//                   // <div className="test" style={styleObject(altImage)}
-//                   // ></div>
-
-//                   <img className="skill-logo" src={altImage} alt={`logo for ${name}`} width="60" />
-//                     :
-//                   <FontAwesomeIcon className="skill-logo" icon={icon} size="5x" />
-//                 }
-//                 <p className="skill-name">{ name }</p>
-//               </Col>
-//             )
-//           })}
-//         </Row>
-//       </section>
-//       <section>
-//         <h3>Current Learning Focuses</h3>
-//         <div className="skills-container">
-//           {developingSkills.map((skill, index) => {
-//             const { name, icon, altImage } = skill
-//             return (
-//               <div className="skill" key={index}>
-//                 { !icon ?
-//                   <img className="skill-logo" src={altImage} alt={`logo for ${name}`} width="60" /> :
-//                   <FontAwesomeIcon className="skill-logo" icon={icon} size="5x"/>}
-//                 <p className="skill-name">{ name }</p>
-//               </div>
-//             )
-//           })}
-//         </div>
-//       </section>
-//       <section>
-//         <h3>Future Learning Goals</h3>
-//         <div className="skills-container">
-//           {futureSkills.map((skill, index) => {
-//             const { name, icon, altImage } = skill
-//             return (
-//               <div className="skill" key={index}>
-//                 { !icon ?
-//                   <img className="skill-logo" src={altImage} alt={`logo for ${name}`} width="60"/> :
-//                   <FontAwesomeIcon className="skill-logo" icon={icon} size="5x"/>}
-//                 <p className="skill-name">{ name }</p>
-//               </div>
-//             )
-//           })}
-//         </div>
-//       </section>
-//     </>
-//   )
-// }
-
-
+  return styleObj
+}
