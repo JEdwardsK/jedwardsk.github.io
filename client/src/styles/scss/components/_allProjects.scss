@@ -1,0 +1,35 @@
+@use '../helpers/variables' as *;
+
+.all-projects-project {
+  width: 13vw;
+  height: 13vw;
+  position: relative;
+  p {
+    position: absolute;
+    background-color: white;
+    white-space: nowrap;
+    color: $hover-colour;
+    border-color: none;
+    font-size: 18px;
+    padding: 0 7px;
+    top: -34px;
+    margin: 0;
+  }
+  button {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid white;
+  }
+}
+
+.all-projects-body {
+  padding: 10vh 4vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2vh 2vh;
+
+}
