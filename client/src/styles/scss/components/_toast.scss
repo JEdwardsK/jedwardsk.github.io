@@ -10,7 +10,12 @@
 .toast-header {
   justify-content: space-between;
   background-color: $background-default;
-
+  * {
+    background-color: white;
+  }
+  button, button * {
+    background-color: $background-default;
+  }
 }
 
 

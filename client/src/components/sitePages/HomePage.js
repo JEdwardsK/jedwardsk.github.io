@@ -269,7 +269,7 @@ const HomePage = () => {
 
         <Toast
           delay={5000}
-          autohide
+          // autohide
           show={isToastVisible}
           onClose={handleToast}
           className="animate__animated animate__slideInLeft"
