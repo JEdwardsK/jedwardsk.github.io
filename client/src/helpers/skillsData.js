@@ -17,6 +17,7 @@ import typescriptLogo from '../assets/logos/typescript.png'
 
 import botw from '../assets/games/botw.png'
 import cupheadPic from '../assets/games/cuphead.jpg'
+import oriBlindPic from '../assets/games/oriBlind.jpg'
 
 //#region skills Arrays
 
@@ -54,15 +55,16 @@ const django = new Skill('Django', null, djangoLogo, 20)
 const sCSS = new Skill('SCSS', faSass, null, 20)
 const bulma = new Skill('Bulma', null, bulmaLogo, 20)
 const bootstrap = new Skill('Bootstrap', faBootstrap, null, 20)
-const typescript = new Skill('TypeScript', null, typescriptLogo, 0)
+const typescript = new Skill('TypeScript', null, typescriptLogo, 10)
 const aWS = new Skill('AWS', faAws, null, -1)
 const reactNative = new Skill('React Native', faReact, null, -1)
 const tailwind = new Skill('Tailwind', null, tailwindLogo, -1)
-const nextJS = new Skill('NextJS', null, nextjsLogo, -1)
+const nextJS = new Skill('NextJS', null, nextjsLogo, 10)
 
 
 const zelda = new Skill('The Legend of Zelda: Breath of the Wild', null, botw, 135)
 const cuphead = new Skill('Cuphead', null, cupheadPic, 25)
+const oriBlindForest = new Skill('Ori and the Blind Forest', null, oriBlindPic, 21)
 
 
 export const currentSkills = [
@@ -79,10 +81,10 @@ export const futureSkills = [
 ]
 
 export const allSkills = [
-  javaScript, html, css, cuphead, react, typescript, nodeJs, express, insomnia, mongoose, yarn, zelda, python, postgresql, tablePlus, mongodb, django, sCSS, bulma, bootstrap, aWS, reactNative, tailwind, nextJS
+  javaScript, html, css, cuphead, react, typescript, oriBlindForest, nodeJs, express, insomnia, mongoose, yarn, zelda, python, postgresql, tablePlus, mongodb, django, sCSS, bulma, bootstrap, aWS, reactNative, tailwind, nextJS
 ]
 
-export const skillHighlight = javaScript
+export const skillHighlight = nextJS
 //#endregion
 
 const styleObject = (altImage) => {
