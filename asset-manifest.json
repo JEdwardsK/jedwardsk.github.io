@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.d9bbccd8.chunk.css",
-    "main.js": "/static/js/main.3d2486c8.chunk.js",
-    "main.js.map": "/static/js/main.3d2486c8.chunk.js.map",
+    "main.js": "/static/js/main.e1389b16.chunk.js",
+    "main.js.map": "/static/js/main.e1389b16.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.900dd88b.js",
     "runtime-main.js.map": "/static/js/runtime-main.900dd88b.js.map",
     "static/js/2.4fbcec1e.chunk.js": "/static/js/2.4fbcec1e.chunk.js",
@@ -42,6 +42,7 @@
     "static/media/mongodb.d76962ba.png": "/static/media/mongodb.d76962ba.png",
     "static/media/mongoose.0988222c.png": "/static/media/mongoose.0988222c.png",
     "static/media/news.abd90bbc.svg": "/static/media/news.abd90bbc.svg",
+    "static/media/oriBlind.12a600f8.jpg": "/static/media/oriBlind.12a600f8.jpg",
     "static/media/pantheon.50ccc691.png": "/static/media/pantheon.50ccc691.png",
     "static/media/pip.9a6f7a5a.png": "/static/media/pip.9a6f7a5a.png",
     "static/media/postgres.4cba10c8.png": "/static/media/postgres.4cba10c8.png",
@@ -58,6 +59,6 @@
     "static/js/runtime-main.900dd88b.js",
     "static/js/2.4fbcec1e.chunk.js",
     "static/css/main.d9bbccd8.chunk.css",
-    "static/js/main.3d2486c8.chunk.js"
+    "static/js/main.e1389b16.chunk.js"
   ]
 }
