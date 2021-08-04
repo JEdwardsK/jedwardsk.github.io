@@ -10,3 +10,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+/// Makes 'box' dimensions for the element, receiving a height and width variable.
+/// @param {number} width - sets the width of the element
+/// @param {number} height - sets the height of the element, if none entered, defaults to equal the width, creating a square
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}

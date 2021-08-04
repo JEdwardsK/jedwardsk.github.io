@@ -165,8 +165,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="homescreen-body-buttons">
-
-            <div>
+            <>
               <a href="https://github.com/JEdwardsK">
                 <button
                   className={`homescreen-button ${hoverFocus === -3 && focusClass}`}
@@ -181,7 +180,7 @@ const HomePage = () => {
               { hoverFocus === -3 &&
                 <p className="button-tag">GitHub</p>
               }
-            </div>
+            </>
             <div>
               <a href="https://www.linkedin.com/in/jedwardsk/">
                 <button
@@ -269,7 +268,7 @@ const HomePage = () => {
 
         <Toast
           delay={5000}
-          // autohide
+          autohide
           show={isToastVisible}
           onClose={handleToast}
           className="animate__animated animate__slideInLeft"
@@ -303,9 +302,6 @@ const HomePage = () => {
 
             <Button variant="secondary" onClick={handleCloseModal}>
             Close
-            </Button>
-            <Button variant="primary" onClick={handleCloseModal}>
-            Save Changes
             </Button>
           </Modal.Footer>
         </Modal>

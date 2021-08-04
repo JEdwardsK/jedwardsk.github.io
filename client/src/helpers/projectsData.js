@@ -68,7 +68,7 @@ const pantheon = new Project(
 const pubHub = new Project(
   'PubHub',
   [atillaArslan, harryWarwick, oliviaFlynn],
-  'A full stack express app with CRUD functionality',
+  'A full stack Express App with CRUD functionality',
   pubImage,
   'https://pubhub-new.herokuapp.com/',
   ['A clone based on AirBnb, the app allows users to register and search pubs in the UK and among other activities save to favourites, leave comments, rate their experience based on criteria and filter searches based on pub amenities.', 'They could additionally register as a landlord to add their own pubs, with additional associated permissions.', 'My primary tasks in the project were handling the backend production, in addition to assisting with front end requests.'],
@@ -78,7 +78,7 @@ const pubHub = new Project(
 const bookFinder = new Project(
   'BookFinder',
   [georgeShaw],
-  'A full stack django App with CRUD functionality, a searchable book database',
+  'A full stack Django App with CRUD functionality, a searchable book database',
   bookImage,
   'https://project-book-finder.herokuapp.com/',
   ['The app allows users to view a database of books, protagonists, antagonists and supporting characters.', 'Registered users can contribute to the database, and search for books by keywords, returning results based on a match value', 'The aim was to theme the app based on Avatar: the Last Airbender, specifically Wan Shi Tong\'s spirit library.', 'My primary tasks in the project were handling the backend production and the search book component. I also was responsible for styling the character SVG logos'],

@@ -27,26 +27,10 @@ const SiteSummary = () => {
             <p>
               {'Thanks for visiting my site!'}
             </p>
-          </section>
-          <br />
-          <hr />
-          <br />
-          <section id="key-info-skills">
-            <h2>My Skills</h2>
             <br />
-            <MySkills location='homepage'/>
+            <hr />
+            <br />
           </section>
-          <br />
-          <hr />
-          <br />
-          <section id="key-info-contact">
-            <h2>Contact Details</h2>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/jedwardsk/">JEdwardsK</a></p>
-            <p>GitHub: <a href="https://github.com/JEdwardsK">JEdwardsK</a></p>
-          </section>
-          <br />
-          <hr />
-          <br />
           <section id="navigation-homepage">
             <h2>HomePage</h2>
             <br />
@@ -73,10 +57,10 @@ const SiteSummary = () => {
             <p>
               {'Clicking on the Settings Tab will redirect you to the Settings page. At the moment there are not any interactive functions. In the future there will be added functionality such as changing the theme or language.'}
             </p>
+            <br />
+            <hr />
+            <br />
           </section>
-          <br />
-          <hr />
-          <br />
           <section id="navigation-profile">
             <h2>Profile</h2>
             <br />
@@ -125,19 +109,35 @@ const SiteSummary = () => {
             <p>
               {'User settings could be used for changing profile picture perhaps and other aesthetics for the site.'}
             </p>
+            <br />
+            <hr />
+            <br />
           </section>
-          <br />
-          <hr />
-          <br />
           {/* <section id="navigation-settings">
             <h2>Settings</h2>
             <p>
               All of settings is currently WIP.
             </p>
+            <br />
+            <hr />
+            <br /> 
           </section> */}
-          {/* <br />
-          <hr />
-          <br /> */}
+          <section id="key-info-skills">
+            <h2>My Skills</h2>
+            <br />
+            <MySkills location='homepage'/>
+            <br />
+            <hr />
+            <br />
+          </section>
+          <section id="key-info-contact">
+            <h2>Contact Details</h2>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/jedwardsk/">JEdwardsK</a></p>
+            <p>GitHub: <a href="https://github.com/JEdwardsK">JEdwardsK</a></p>
+            <br />
+            <hr />
+            <br />
+          </section>
         </Card.Text>
       </Card.Body>
     </Card>

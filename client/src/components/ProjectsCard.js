@@ -12,8 +12,6 @@ import Modal from 'react-bootstrap/esm/Modal'
 const ProjectsCard = ({ projectToDisplay }) => {
   const project = projects.filter(project => project.title === projectToDisplay)[0]
 
-  console.log(project)
-
   const { title, projectType, collaborators, tagLine, about, image, deployedLink, repoLink } = project
 
 

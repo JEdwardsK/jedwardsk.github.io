@@ -24,7 +24,7 @@ const Footer = () => {
 
   const location = useLocation()
   const history = useHistory()
-  console.log(location.pathname)
+
 
   const handlegoBack = () => {
     history.goBack()
@@ -76,9 +76,6 @@ const Footer = () => {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleModal}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleModal}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>

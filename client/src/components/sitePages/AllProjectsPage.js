@@ -25,11 +25,9 @@ const AllProjectsPage = () => {
 
   const handleMouseEnter = (event) => {
     const { value } = event.target
-    console.log('🚀 ~ file: AllProjectsPage.js ~ line 17 ~ handleMouseEnter ~ value', value)
     const numValue = Number(value)
     defaultHoverSound.play()
     setHoverFocus(numValue)
-    console.log(hoverFocus)
   }
   const handleMouseExit = () => {
     setHoverFocus(-1)
@@ -94,9 +92,6 @@ const AllProjectsPage = () => {
 
           <Button variant="secondary" onClick={handleCloseModal}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleCloseModal}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
