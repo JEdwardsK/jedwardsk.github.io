@@ -119,36 +119,5 @@
       }
 
     }
-    .homescreen-body-buttons {
-      color: black;
-      height: 200px;
-      display: flex;
-      padding: 10px;
-      justify-content: center;
-      overflow-x: scroll;
-      // div {
-        display: flex;
-        // flex-direction: column;
-        // height: 200px;
-        // position: relative;
-        .homescreen-button {
-          margin: 10px;
-          @include box(10vh);
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: contain;
-        }
-        p {
-          color: $hover-colour;
-          text-align: center;
-          font-size: 25px;
-          position: absolute;
-          bottom: 0;
-          width: auto;
-          white-space: nowrap;
-
-        }
-      // }
-    }
   }
 }

@@ -10,37 +10,22 @@ import { projects } from '../../helpers/projectsData'
 
 import ProjectsCard from '../ProjectsCard'
 import SystemStatus from '../SystemStatus'
+import Footer from '../Footer'
 
 
 import homeClick from '../../assets/sounds/Home.wav'
 import userClick from '../../assets/sounds/User.wav'
-import settingsClick from '../../assets/sounds/Settings.wav'
-import eshopSound from '../../assets/sounds/Eshop Intro.wav'
+
 import openGameSound from '../../assets/sounds/Popup + Run Title.wav'
 import errorSound from '../../assets/sounds/Error.wav'
 import hoverClick from '../../assets/sounds/Nock.wav'
 import allProjectSound from '../../assets/sounds/Icons.wav'
 
-import Footer from '../Footer'
 
-
-import codepenlogo from '../../assets/logos/codepen.png'
-import linkedinlogo from '../../assets/logos/linkedin.png'
-import githublogo from '../../assets/logos/github.png'
-
-
-import eShopPic from '../../assets/nintendo-icons/eshop.png'
 import switchIcon from '../../assets/nintendo-icons/switch.png'
 import linkPic from '../../assets/images/windlink.png'
-
-
-
-import albumSVG from '../../assets/svgs/album.svg'
-import controllerSVG from '../../assets/svgs/controller.svg'
-import powerSVG from '../../assets/svgs/power.svg'
-import settingsSVG from '../../assets/svgs/settings.svg'
 import allprojectsSVG from '../../assets/svgs/allprojects.svg'
-import newsSVG from '../../assets/svgs/news.svg'
+import IconButtons from '../homeScreenComponents/IconButtons'
 
 const HomePage = () => {
   const [projectToModal, setProjectToModal] = useState('')
@@ -50,8 +35,6 @@ const HomePage = () => {
 
   const homeSound = new Audio(homeClick)
   const profileSound = new Audio(userClick)
-  const settingsSound = new Audio(settingsClick)
-  const eshopSoundClick = new Audio(eshopSound)
   const projectClick = new Audio(openGameSound)
   const projectClose = new Audio(errorSound)
   const defaultHoverSound = new Audio(hoverClick)
@@ -81,7 +64,6 @@ const HomePage = () => {
     setHoverFocus(-1)
   }
 
-  const nintendoOnline = 'https://vignette.wikia.nocookie.net/nintendo/images/d/de/Nintendo_Switch_Online_-_App_icon.svg/revision/latest?cb=20170719034029&path-prefix=en'
 
 
   const handlePageChange = (event) => {
@@ -109,7 +91,7 @@ const HomePage = () => {
   }
 
   const handleToast = () => setIsToastVisible(false)
-  const eshopPlaySound = () => eshopSoundClick.play()
+
 
 
   return (
@@ -138,9 +120,17 @@ const HomePage = () => {
                   { hoverFocus === index &&
                     <div className="scrolling-text"><span>{`${title} - ${tagLine}`}</span></div>
                   }
-
-                  <button onClick={handleProjectModal} className={`carousel-item ${hoverFocus === index && focusClass}`} name={title} style={{ backgroundImage: `url(${image})` }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} value={index}>
-                  </button>
+                  <button 
+                    onClick={handleProjectModal} 
+                    className={
+                      `carousel-item ${hoverFocus === index && focusClass}`
+                    } 
+                    name={title} 
+                    style={{ backgroundImage: `url(${image})` }}
+                    onMouseEnter={handleMouseEnter} 
+                    onMouseLeave={handleMouseExit} 
+                    value={index}
+                  />
                 </div>
               )
             })
@@ -164,105 +154,13 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="homescreen-body-buttons">
-            <>
-              <a href="https://github.com/JEdwardsK">
-                <button
-                  className={`homescreen-button ${hoverFocus === -3 && focusClass}`}
-                  value="-3"
-                  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
-                  style={
-                    {
-                      backgroundImage: `url(${hoverFocus === -3 ? githublogo : nintendoOnline})`,
-                    }}
-                />
-              </a>
-              { hoverFocus === -3 &&
-                <p className="button-tag">GitHub</p>
-              }
-            </>
-            <div>
-              <a href="https://www.linkedin.com/in/jedwardsk/">
-                <button
-                  className={`homescreen-button ${hoverFocus === -4 && focusClass}`}
-                  value="-4"
-                  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
-                  style={
-                    {
-                      backgroundImage: `url(${hoverFocus === -4 ? linkedinlogo : newsSVG})`,
-                    }}
-                />
-              </a>
-              { hoverFocus === -4 &&
-                <p className="button-tag">LinkedIn</p>
-              }
-            </div>
-            <div>
-              <button
-                className={`homescreen-button ${hoverFocus === -5 && focusClass}`}
-                value="-5"
-                style={
-                  { backgroundImage: `url(${eShopPic})`, cursor: 'default' }
-                }
-                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
-                onClick={eshopPlaySound}/>
-              { hoverFocus === -5 &&
-                <p className="button-tag">Nintendo eShop</p>
-              }
-            </div>
-            <div>
-              <button
-                className={`homescreen-button ${hoverFocus === -6 && focusClass}`}
-                value="-6"
-                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit}
-                style={
-                  {
-                    backgroundImage: `url(${hoverFocus === -6 ? codepenlogo : albumSVG})`, cursor: 'default',
-                  }
-                }
-              />
-              { hoverFocus === -6 &&
-                <p className="button-tag">Codepen</p>
-              }
-            </div>
-            <div>
-              <button
-                className={`homescreen-button ${hoverFocus === -7 && focusClass}`}
-                value="-7"
-                style={
-                  { backgroundImage: `url(${controllerSVG})`,cursor: 'default' }
-                }
-                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
-              { hoverFocus === -7 &&
-                <p className="button-tag">Controllers</p>
-              }
-            </div>
-            <div>
-              <button
-                name="settings" onClick={handlePageChange}
-                className={`homescreen-button ${hoverFocus === -8 && focusClass}`}
-                value="-8"
-                style={
-                  { backgroundImage: `url(${settingsSVG})`,cursor: 'default' }
-                }
-                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
-              { hoverFocus === -8 &&
-                  <p className="button-tag">Settings</p>
-              }
-            </div>
-            <div>
-              <button
-                className={`homescreen-button ${hoverFocus === -9 && focusClass}`}
-                value="-9"
-                style={
-                  { backgroundImage: `url(${powerSVG})`,cursor: 'default' }
-                }
-                onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} />
-              { hoverFocus === -9 &&
-                  <p className="button-tag">Sleep Mode</p>
-              }
-            </div>
-          </div>
+          <IconButtons
+            handleMouseEnter= {handleMouseEnter}
+            focusClass= {focusClass}
+            hoverFocus= {hoverFocus}
+            handleMouseExit= {handleMouseExit}
+            handlePageChange= {handlePageChange}
+          />
         </div>
         <Footer />
 

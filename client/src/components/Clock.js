@@ -9,9 +9,9 @@ const Clock = () => {
   }, [dateTime])
 
   return (
-    <p className="clock">
-      {dateTime.toLocaleTimeString().slice(0,-3)}
-    </p>
+    <div className="clock">
+      <p>{dateTime.toLocaleTimeString().slice(0,-3)}</p>
+    </div>
   )
 }
 
