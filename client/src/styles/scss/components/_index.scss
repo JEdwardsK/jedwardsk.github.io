@@ -1,10 +1,11 @@
 
-@use './allProjects';
-@use './date';
-@use './friendsTab';
-@use './projectsCard';
-@use './skills-modal';
-@use './skills';
-@use './toast';
-@use './tooltip';
-@use './IconButtons'
+@forward './allProjects';
+@forward './date';
+@forward './friendsTab';
+@forward './projectsCard';
+@forward './skills-modal';
+@forward './skills';
+@forward './toast';
+@forward './tooltip';
+@forward './IconButtons';
+@forward './svgAangStyles'

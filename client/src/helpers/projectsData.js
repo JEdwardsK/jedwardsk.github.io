@@ -1,5 +1,6 @@
 import pubImage from '../assets/project-images/pubHub.png'
 import bookImage from '../assets/project-images/bookFinder.png'
+import book2Image from '../assets/project-images/bookFinder2.png'
 import spaceImage from '../assets/project-images/spaceInvaders.png'
 import greekImage from '../assets/project-images/pantheon.png'
 import luigiPic from '../assets/images/luigi.png'
@@ -44,6 +45,15 @@ class Project {
 
 
 //#region projects
+const bookFinder2 = new Project(
+  'Bookfinder 2.0',
+  [],
+  'A redesign of a previous project, with better design and added functionality. Work in Progress',
+  book2Image,
+  'https://jedwardsk.github.io/book_finder_v2/',
+  ['WIP, more to follow soon...'],
+  'https://github.com/JEdwardsK/book_finder_v2'
+)
 const spaceInvaders = new Project(
   'Space Invaders',
   [],
@@ -87,6 +97,7 @@ const bookFinder = new Project(
 //#endregion
 
 export const projects = [
+  bookFinder2,
   bookFinder,
   pubHub,
   pantheon,

@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles relating to the Aang SVG Component
+// -----------------------------------------------------------------------------
+
+@use '../helpers/animations' as *;
+
+.scooter_style {
+  animation: scooterAnimate .5s 4s linear infinite;
+}
+
+#aang_full_svg {
+  animation: aangHover 2s 5s linear infinite;
+}
+
+.aang_avatar_state {
+  animation: avatarState 20s ease 7s infinite;
+}

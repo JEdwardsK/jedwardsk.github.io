@@ -8,6 +8,7 @@ import ProfilePage from './components/sitePages/ProfilePage'
 import SettingsPage from './components/sitePages/SettingsPage'
 import HomePage from './components/sitePages/HomePage'
 import AllProjectsPage from './components/sitePages/AllProjectsPage'
+import BookFinderPage from './components/sitePages/BookFinderPage'
 
 
 const App = () => {
@@ -26,6 +27,9 @@ const App = () => {
         </Route>
         <Route path="/featured">
           <FeaturedPage/>
+        </Route>
+        <Route path="/book_finder_v2/">
+          <BookFinderPage/>
         </Route>
         <Route path="/">
           <HomePage />
