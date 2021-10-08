@@ -19,6 +19,8 @@ import botw from '../assets/games/botw.png'
 import cupheadPic from '../assets/games/cuphead.jpg'
 import oriBlindPic from '../assets/games/oriBlind.jpg'
 
+import apolloLogo from '../assets/logos/apollo-logo.png'
+
 //#region skills Arrays
 
 export class Skill {
@@ -60,6 +62,7 @@ const aWS = new Skill('AWS', faAws, null, -1)
 const reactNative = new Skill('React Native', faReact, null, -1)
 const tailwind = new Skill('Tailwind', null, tailwindLogo, -1)
 const nextJS = new Skill('NextJS', null, nextjsLogo, 10)
+const apollo = new Skill('Apollo GraphQL', null, apolloLogo, 3)
 
 
 const zelda = new Skill('The Legend of Zelda: Breath of the Wild', null, botw, 135)
@@ -81,10 +84,10 @@ export const futureSkills = [
 ]
 
 export const allSkills = [
-  javaScript, html, css, cuphead, react, typescript, oriBlindForest, nodeJs, express, insomnia, mongoose, yarn, zelda, python, postgresql, tablePlus, mongodb, django, sCSS, bulma, bootstrap, aWS, reactNative, tailwind, nextJS
+  javaScript, html, css, cuphead, react, typescript, apollo, oriBlindForest, nodeJs, express, insomnia, mongoose, yarn, zelda, python, postgresql, tablePlus, mongodb, django, sCSS, bulma, bootstrap, aWS, reactNative, tailwind, nextJS
 ]
 
-export const skillHighlight = nextJS
+export const skillHighlight = apollo
 //#endregion
 
 const styleObject = (altImage) => {
