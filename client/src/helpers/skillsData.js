@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-import { faAws, faBootstrap, faCss3, faHtml5, faJsSquare, faNodeJs, faPython, faReact, faSass, faYarn } from '@fortawesome/free-brands-svg-icons'
+import { faAws, faBootstrap, faCss3, faHtml5, faJsSquare, faNodeJs, faPython, faReact, faSass, faYarn, faJava } from '@fortawesome/free-brands-svg-icons'
 
 import bulmaLogo from '../assets/logos/bulma.png'
 import djangoLogo from '../assets/logos/django.png'
@@ -14,12 +14,14 @@ import postgresqlLogo from '../assets/logos/postgres.png'
 import tableplusLogo from '../assets/logos/tableplus.png'
 import tailwindLogo from '../assets/logos/tailwind.png'
 import typescriptLogo from '../assets/logos/typescript.png'
+import apolloLogo from '../assets/logos/apollo-logo.png'
+import cLogo from '../assets/logos/c-logo-3.png'
 
 import botw from '../assets/games/botw.png'
 import cupheadPic from '../assets/games/cuphead.jpg'
 import oriBlindPic from '../assets/games/oriBlind.jpg'
 
-import apolloLogo from '../assets/logos/apollo-logo.png'
+
 
 //#region skills Arrays
 
@@ -63,6 +65,8 @@ const reactNative = new Skill('React Native', faReact, null, -1)
 const tailwind = new Skill('Tailwind', null, tailwindLogo, -1)
 const nextJS = new Skill('NextJS', null, nextjsLogo, 10)
 const apollo = new Skill('Apollo GraphQL', null, apolloLogo, 3)
+const java = new Skill('Java', faJava, null, -1)
+const cPlus = new Skill('C++', null, cLogo, -1)
 
 
 const zelda = new Skill('The Legend of Zelda: Breath of the Wild', null, botw, 135)
@@ -76,11 +80,11 @@ export const currentSkills = [
 ]
 
 export const developingSkills = [
-  python, sCSS, postgresql, typescript
+  python, apollo, typescript, reactNative
 ]
 
 export const futureSkills = [
-  aWS, reactNative,tailwind, nextJS
+  aWS,tailwind, nextJS, java, cPlus
 ]
 
 export const allSkills = [

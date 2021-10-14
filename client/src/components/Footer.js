@@ -52,7 +52,7 @@ const Footer = () => {
         </Modal.Header>
         <Nav variant="tabs" defaultActiveKey="#first">
           <Nav.Item>
-            <Nav.Link href="#first">Start</Nav.Link>
+            <Nav.Link href="#first">Intro</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="#key-info-skills">My Skills</Nav.Link>
