@@ -12,6 +12,7 @@ import eShopPic from '../../assets/nintendo-icons/eshop.png'
 
 import settingsClick from '../../assets/sounds/Settings.wav'
 import eShopSound from '../../assets/sounds/Eshop Intro.wav'
+import useWindowDimensions from '../../hooks/useWindowDimensions'
 
 
 
@@ -21,7 +22,7 @@ const IconButtons = ({ handleMouseEnter, focusClass, hoverFocus, handleMouseExit
   // eslint-disable-next-line no-unused-vars
   const settingsSound = new Audio(settingsClick)
 
-
+  const { width } = useWindowDimensions()
   const eShopPlaySound = () => eShopSoundClick.play()
 
   const nintendoOnline = 'https://vignette.wikia.nocookie.net/nintendo/images/d/de/Nintendo_Switch_Online_-_App_icon.svg/revision/latest?cb=20170719034029&path-prefix=en'
@@ -80,9 +81,9 @@ const IconButtons = ({ handleMouseEnter, focusClass, hoverFocus, handleMouseExit
                       }}
                   />
                 </a>
-                { hoverFocus === hoverValue &&
+                {/* { width < 2000 && hoverFocus === hoverValue &&
                   <p className="button-tag">{tagName}</p>
-                }
+                } */}
               </div>
             )
           } else {
@@ -100,7 +101,7 @@ const IconButtons = ({ handleMouseEnter, focusClass, hoverFocus, handleMouseExit
                   onMouseEnter={handleMouseEnter} 
                   onMouseLeave={handleMouseExit}
                   onClick={eShopPlaySound}/>
-                { hoverFocus === hoverValue &&
+                { width < 2000 && hoverFocus === hoverValue &&
                 <p className="button-tag"> 
                   {tagName}
                 </p>

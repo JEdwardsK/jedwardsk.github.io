@@ -46,7 +46,9 @@ const ProjectsCard = ({ projectToDisplay }) => {
                     return <p key={index}>{paragraph}</p>
                   })}
                 </Card.Text>
-                <Card.Text><a href={deployedLink}>View Project</a></Card.Text>
+                { deployedLink && 
+                  <Card.Text><a href={deployedLink}>View Project</a></Card.Text>
+                }
                 {collaborators.length > 0 &&
 
                         <ListGroup variant="flush"> <h5>Team Members</h5>

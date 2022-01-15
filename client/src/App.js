@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 // import LockScreen from './components/LockScreen'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
@@ -9,12 +9,25 @@ import SettingsPage from './components/sitePages/SettingsPage'
 import HomePage from './components/sitePages/HomePage'
 import AllProjectsPage from './components/sitePages/AllProjectsPage'
 import BookFinderPage from './components/sitePages/BookFinderPage'
+import useWindowDimensions from './hooks/useWindowDimensions'
+import ScreenSizeWarningModal from './components/ScreenSizeWarningModal'
 
-
+let isFirstSmallScreenWarning = true
 const App = () => {
+  const { width } = useWindowDimensions()
+  const [isWarningModalOpen, setIsWarningModalOpen] = useState(false)
+  useEffect(() => {
+    if (width < 700 && !isWarningModalOpen && isFirstSmallScreenWarning) {
+      setIsWarningModalOpen(true)
+      isFirstSmallScreenWarning = false
+    }
+    console.log({ isFirstSmallScreenWarning })
+  }, [isWarningModalOpen, width])
+  const handleShowModal = () => setIsWarningModalOpen(!isWarningModalOpen)
   return (
 
     <BrowserRouter>
+      <ScreenSizeWarningModal show={isWarningModalOpen} handleShow={handleShowModal}/>
       <Switch>
         <Route path="/all-projects">
           <AllProjectsPage/>

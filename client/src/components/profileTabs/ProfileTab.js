@@ -10,7 +10,6 @@ import SkillsModal from '../modals/SkillsModal'
 
 const ProfileTab = () => {
   const [isModalVisible, setIsModalVisible] = useState(false)
-
   const handleModal = () => {
     setIsModalVisible(true)
   }
