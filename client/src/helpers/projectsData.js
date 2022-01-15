@@ -90,7 +90,7 @@ const bookFinder = new Project(
   [georgeShaw],
   'A full stack Django App with CRUD functionality, a searchable book database',
   bookImage,
-  'https://project-book-finder.herokuapp.com/',
+  '',
   ['The app allows users to view a database of books, protagonists, antagonists and supporting characters.', 'Registered users can contribute to the database, and search for books by keywords, returning results based on a match value', 'The aim was to theme the app based on Avatar: the Last Airbender, specifically Wan Shi Tong\'s spirit library.', 'My primary tasks in the project were handling the backend production and the search book component. I also was responsible for styling the character SVG logos'],
   'https://github.com/JEdwardsK/SEI-Project-4'
 )

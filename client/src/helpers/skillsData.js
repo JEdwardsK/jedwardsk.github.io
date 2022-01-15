@@ -59,7 +59,7 @@ const django = new Skill('Django', null, djangoLogo, 20)
 const sCSS = new Skill('SCSS', faSass, null, 20)
 const bulma = new Skill('Bulma', null, bulmaLogo, 20)
 const bootstrap = new Skill('Bootstrap', faBootstrap, null, 20)
-const typescript = new Skill('TypeScript', null, typescriptLogo, 10)
+const typescript = new Skill('TypeScript', null, typescriptLogo, 120)
 const aWS = new Skill('AWS', faAws, null, -1)
 const reactNative = new Skill('React Native', faReact, null, -1)
 const tailwind = new Skill('Tailwind', null, tailwindLogo, -1)
@@ -67,7 +67,6 @@ const nextJS = new Skill('NextJS', null, nextjsLogo, 10)
 const apollo = new Skill('Apollo GraphQL', null, apolloLogo, 3)
 const java = new Skill('Java', faJava, null, -1)
 const cPlus = new Skill('C++', null, cLogo, -1)
-
 
 const zelda = new Skill('The Legend of Zelda: Breath of the Wild', null, botw, 135)
 const cuphead = new Skill('Cuphead', null, cupheadPic, 25)
@@ -91,7 +90,7 @@ export const allSkills = [
   javaScript, html, css, cuphead, react, typescript, apollo, oriBlindForest, nodeJs, express, insomnia, mongoose, yarn, zelda, python, postgresql, tablePlus, mongodb, django, sCSS, bulma, bootstrap, aWS, reactNative, tailwind, nextJS
 ]
 
-export const skillHighlight = apollo
+export const skillHighlight = typescript
 //#endregion
 
 const styleObject = (altImage) => {
