@@ -1,0 +1,24 @@
+@use './animations';
+@use './typography';
+@use '../helpers/variables' as *;
+
+hr {
+  border: 2px solid black;
+  margin: 0 2%;
+  margin-bottom: 10px;
+}
+* {
+  font-family:'A-OTF Shin Go Pro R';
+  background-color: $background-default;
+}
+
+p {
+  max-width: 60ch;
+}
+
+.highlight {
+  animation: hover-focus 1s linear infinite;
+}
+.highlight2 {
+  animation: hover-focus2 1s linear infinite;
+}

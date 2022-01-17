@@ -1,0 +1,63 @@
+@use '../helpers/variables' as *;
+
+.lockscreen-container {
+  display: flex;
+  height: 100%;
+  width:100%;
+  .sidebar {
+    background-color: $brand-grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .alt-featured-container {
+      display: flex;
+      height: 80%;
+      background-color:violet;
+      width: 100%;
+      .featured {
+      background-color: yellow;
+      height: 25%;
+      width: 80%;
+      margin: 5%;
+    }
+  }
+    .featured-container {
+      display: flex;
+      flex:9;
+      flex-direction: column;
+      width:100%;
+      .featured {
+      background-color: yellow;
+      height: 25%;
+      width: 80%;
+      margin: 5%;
+    }
+  }
+    .sidebar-featured-button-container {
+      flex:1;
+      border: 2px solid red;
+      display: flex;
+      width: 80%;
+
+    }
+  }
+  .main {
+    position:relative;
+    .continue-button-container {
+      border: 2px solid red;
+      bottom: 7%;
+      left: 40%;
+      display: flex;
+      button {
+        background-color: black;
+        color: white;
+        flex: 1
+      }
+      p {
+        color: black;
+        flex: 7;
+      }
+    }
+  }
+}

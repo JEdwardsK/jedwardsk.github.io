@@ -1,0 +1,19 @@
+@use '../helpers/variables' as *;
+
+.team-member {
+  display: flex;
+  justify-content: space-between;
+  a {
+  color: $brand-red;
+  flex: .5;
+  background-color: white
+  };
+  a :hover {
+    color:$brand-grey;
+  }
+  p {
+    flex: 2;
+    background-color: white;
+  }
+
+}
