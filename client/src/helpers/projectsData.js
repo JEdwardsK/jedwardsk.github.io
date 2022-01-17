@@ -98,8 +98,8 @@ const bookFinder = new Project(
 
 export const projects = [
   bookFinder2,
-  bookFinder,
   pubHub,
+  bookFinder,
   pantheon,
   spaceInvaders
 ]
