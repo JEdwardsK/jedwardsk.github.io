@@ -1,0 +1,158 @@
+@use '../helpers/variables' as *;
+@use 'sass:math';
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 0 15px 30px;
+  img {
+    border-radius: 50%;
+    width: 80px;
+  }
+  h4 {
+    margin-left: 15px;
+  }
+  height: 10vh
+}
+
+.profile-page-body, .all-projects-body, .settings-page-body{
+  height:80vh;
+  overflow: scroll;
+  position: relative;
+  display: flex;
+  .profile-sidebar, .settings-sidebar{
+    position:sticky;
+    background-color: $background-lighter;
+    top: 0;
+    width: math.div(1, 3);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-y: scroll;
+    .profile-sidebar-headers {
+      border:none;
+      text-align: left;
+      font-size: 25px;
+      margin: 20px;
+      padding: 20px 0;
+      padding-left: 10px;
+    }
+    .profile-sidebar-headers:first{
+      border-bottom: $divider;
+    }
+  }
+
+  .profile-main, .settings-main {
+    overflow: auto;
+    width: math.div(2,3);
+    left:25%;
+    padding: 25px;
+  }
+
+  .profile-profile-tab {
+      .my-info {
+        display:flex;
+        
+        .profile-pic {
+          width: 35%;
+          min-width: 200px;
+          margin-right: 37px;
+        }
+        .my-info-right {
+          flex:2;
+          display: flex;
+          flex-direction: column;
+          h3 {
+            padding: 20px;
+            font-size: 47px;
+            border-top: $divider;
+            border-bottom: $divider;
+          }
+          .current-play {
+            display: flex;
+            border-bottom: $divider;
+            .current-play-img {
+              flex: 1;
+              width: 100px;
+            }
+            .current-play-text {
+              flex:4;
+              p:nth-child(1) {
+                color: forestgreen;
+              }
+
+            }
+
+          }
+        }
+      
+        @media screen and (max-width: 750px) {
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          .my-info-right h3 {
+            font-size: 30px;
+            border-top: none;
+          }
+        }
+      }
+      .play-activity {
+        margin-top: 70px;
+        .play-activity-header {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: $divider;
+          padding: 0 0 10px 10px;
+
+          h5 {
+            font-size: 20px;
+            border-left: 6px solid rgb(95, 95, 95);
+            padding-left: 10px;
+          }
+        }
+        .skills {
+          .play-container{
+            display: flex;
+            padding: 15px;
+            .logo-container{
+              width: 100px;
+              // flex: 1;
+              margin-right: 10px
+            }
+            .skill-description {
+              padding: 10px;
+              // flex: 3;
+              .skill-name{
+                flex: 1;
+                text-align: center;
+                justify-self: center;
+                font-size: 23px;
+                margin-bottom: 0;
+                text-align: left;
+                // white-space: nowrap;
+              }
+            }
+            @media screen and (min-width: 700px) {
+              .logo-container {
+                width: 12.5%; 
+                min-width: 100px;
+                flex: 1
+              }
+              .skill-description {
+                flex: 15;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+.settings-main:first-child{
+  overflow: auto;
+}

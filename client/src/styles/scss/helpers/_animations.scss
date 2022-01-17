@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains all applications animations.
+// -----------------------------------------------------------------------------
+
+
+/// Animation intends to simulate Aang's air scooter moving like the wind by slightly growing and shrinking in scale
+/// @author J Edwards
+@keyframes scooterAnimate {
+  0% {
+    transform:translate(0)
+  }
+
+  25%{
+    transform: translate(-.25%);
+  }
+
+  75%{
+    transform: translate(.25%);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+/// Animation intends to simulate air-bending tattoos glowing
+/// @author J Edwards
+@keyframes avatarState {
+  0% {
+    fill: #90c2e1
+  }
+
+  3% {
+    fill: white;
+
+  }
+  30% {
+    fill: white;
+
+  }
+  40% {
+    fill: #90c2e1
+  }
+  
+  100% {
+    fill: #90c2e1
+  }
+
+}
+
+/// Animation to simulate hovering
+/// @author J Edwards
+@keyframes aangHover {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(3%);
+  }
+
+  100%{
+    transform: translateY(0%)
+  }
+}
